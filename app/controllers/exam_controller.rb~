@@ -1,0 +1,23 @@
+class ExamController < ApplicationController
+  # GET /exam
+  # GET /exam.json
+  def index
+    @quiz = "next charenger"
+  end
+
+  def get
+    quiz_id = params[:id]
+    @quiz = Quiz.new
+    @quiz.text = 'quiz text'
+
+    status = 'success'
+    render json: { status: status, data: @quiz}
+    
+  end
+
+  def post
+    quiz_id = params[:id]
+    @quiz = quiz_id
+  end
+
+end

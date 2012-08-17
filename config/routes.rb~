@@ -12,7 +12,7 @@ ElearnNekoPunchi::Application.routes.draw do
   match 'exams' , :to => 'exams#index'
   match 'exams/show' , :to => 'exams#show'
   match 'exams/:id' , :to => 'exams#show', :via => 'get'
-  match 'exams/answer' , :to => 'exams#answer', :via => 'post'
+  match 'exams/:id' , :to => 'exams#post', :via => 'post'
   match 'exams/next' , :to => 'exams#next', :via => 'get'
   match 'exams/prev' , :to => 'exams#prev', :via => 'get'
 

@@ -9,10 +9,10 @@
 <body>
   <div id="wrapper">
     <%= render 'layouts/header' %>
+    <%= render 'layouts/footer' %>
     <div id="contents">
       <%= yield %>
     </div>
-    <%= render 'layouts/footer' %>
   </div>
 </body>
 </html>
