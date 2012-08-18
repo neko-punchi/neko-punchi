@@ -8,17 +8,11 @@
      :confirm => 'やめるなら今しかないよ？') %>
 </div>
 <div id='exam-question'>
-  <div id='exam-one' >
-    <h1>問題</h1>
+    <h1 id='exam-number'>問題nn</h1>
     <p id="exam-text"></p>
-    <%= form_tag(url_for(:action=>'answer',:method=>'post'), :remote=>true) do %>
-      <div id='exam-answer-typeA'>
-      </div>
-      <div id='exam-answer-typeA'>
-        <%= text_field '',  :written_answer %>
-        <%= submit_tag('回答',{:id => 'exam-simple-submit'})  %>
+    <%= form_tag(url_for(:action=>'answer'), :remote=>true) do %>
+      <div id='exam-answer'>
       </div>
     <% end %>
-  </div>
 </div>
 </div>

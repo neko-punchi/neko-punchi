@@ -3,22 +3,36 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(($)->
+  #loading
   $('#exam-question').hide()
+
   $('#exam-simple-submit').live('click', -> alert("loading"))
+  #start link click
   $('#start-link')
-    .live("ajax:complete", (xhr)->
+    .on("ajax:complete", (event, data, status)->
+      
       $('#exam-pre').hide()
+      res = $.parseJSON(data.responseText)
+      $('#exam-number').empty()
+      $('#exam-text').empty()
+      $('#exam-answer').empty()
+
+      $('#exam-number').text("問題:#{res.number}")
+      $('#exam-text').text("#{res.quiz.text}")
+      $('#exam-answer').append("<input type='hidden' name='id' value=\"#{res.quiz.id}\"/>")
+      if res.quiz.choose == null
+        $('#exam-answer').append("<input type='text' name='answer' value=''/>")
+        $('#exam-answer').append("<input type='submit' value='回答'/>")
+      else
+        for elm in res.quiz.choose
+          $('#exam-answer').append("<label  class='exam_button'>#{elm}</label>")
+          $('.exam_button').button({ text: false, icons: { primary :'ui-icon-carat-1-e'}})
+          $('.exam_button').click(-> alert("aaa"))
+       
       $('#exam-question').show()
     )
     .live("ajax:beforeSend", (xhr)->
       $('#time').append('<div>Loading...</div>')
-    )
-    .live("ajax:success", (event, data, status, xhr)->
-      $('#exam-one').empty()
-      $('#exam-one').append('<div id=\'exam-text\'><p>' + data.text + '</p></div>')
-      ##$('#exam-one').append('<input type="submit" value="abc" />')
-      ##for elm in data.choose
-      ##  $('#exam-one').append(elm)
     )
     .live("ajax:error", (data, status, xhr)->
       alert("failure!!!")
