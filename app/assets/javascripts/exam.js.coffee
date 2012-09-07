@@ -2,9 +2,21 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
+
 $(($)->
   #loading
   $('#exam-question').hide()
+  $( ".dialog-modal" ).dialog({
+    height: 340,
+    modal: true,
+    autoOpen: false
+  })
+  $('.exam_button').click(->
+    quiz_num = $(this).attr("value")
+    $('#' + quiz_num).dialog('open')
+  )
+
+  $('.exam_button').button({ text: true, icons: { primary :'ui-icon-carat-1-e'}})
 
   $('#exam-simple-submit').live('click', -> alert("loading"))
   #start link click

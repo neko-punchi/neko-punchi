@@ -2,11 +2,15 @@ class ExamsController < ApplicationController
   # GET /exams
   # GET /exams.json
   def index
-    quiz_id = params[:id]
-    @quiz = Quiz.new
-    @quiz.text = 'what\'s dmesg ?'
-    @quiz.choose = ['(1)aaa', '(2)bbbb', '(3)ccc']
-    
+    #create quizzes
+    @objlist = []
+    30.times.each { |i|
+      quiz = Quiz.new
+      quiz.id = i + 1
+      quiz.text = 'what\'s dmesg ?'
+      quiz.choose = ['(1)aaa', '(2)bbbb', '(3)ccc']
+      @objlist << quiz
+    }
 
     #status = 'success'
     #render json: { status: status, data: @quiz}
