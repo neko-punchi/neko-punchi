@@ -15,6 +15,8 @@ ElearnNekoPunchi::Application.routes.draw do
   match 'exams/next' , :to => 'exams#next', :via => 'get'
   match 'exams/prev' , :to => 'exams#prev', :via => 'get'
 
+  match 'top' , :to => 'top#index'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

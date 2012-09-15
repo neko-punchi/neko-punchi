@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-class ExamsController < ApplicationController
-  # GET /exams
-  # GET /exams.json
+class TopController < ApplicationController
+  # GET /top
+  # GET /top.json
   def index
     #create quizzes
     @objlist = []
@@ -12,7 +12,7 @@ class ExamsController < ApplicationController
       quiz.choose = ['(1)aaa', '(2)bbbb', '(3)ccc']
       ##@objlist << quiz
     }
-=begin    
+    
     quiz01 = Quiz.new
     quiz01.id = 1
     quiz01.text = '返事の「はい」は一回でいいと怒られたことがありますか。'
@@ -55,5 +55,5 @@ class ExamsController < ApplicationController
     status = 'success'
     render json: { status: status, data: @quiz}
   end
-=end
+
 end
