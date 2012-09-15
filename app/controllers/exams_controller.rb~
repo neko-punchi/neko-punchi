@@ -47,12 +47,13 @@ class ExamsController < ApplicationController
 
   def answer
     puts "answer in"
-    quiz_id = params[:id]
-    amswer = params[:answer]
-    puts quiz_id
-    puts answer
+    puts quiz_id = params[:id]
+    puts answer = params[:answer]
+    ##status = 'success'
+    ##render json: { status: status, data: "ok"}
+    ##render :action => "index"
     
-    render json: {number: num}
+    redirect_to "/exams"
   end
 
 end

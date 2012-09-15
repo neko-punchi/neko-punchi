@@ -22,5 +22,6 @@ $(($)->
   #submit button
   $('.submit_button').click(->
      alert($(this).parent().html())
+     $(this).parent().submit()
   )
 )

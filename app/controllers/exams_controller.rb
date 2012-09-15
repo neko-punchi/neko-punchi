@@ -48,12 +48,12 @@ class ExamsController < ApplicationController
   def answer
     puts "answer in"
     quiz_id = params[:id]
-    amswer = params[:answer]
-    puts quiz_id
-    puts answer
-    @quiz = Quiz.new
-    status = 'success'
-    render json: { status: status, data: @quiz}
+    answer = params[:answer]
+    ##status = 'success'
+    ##render json: { status: status, data: "ok"}
+    ##render :action => "index"
+    
+    redirect_to "/exams"
   end
 =end
 end
