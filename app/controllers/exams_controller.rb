@@ -12,7 +12,6 @@ class ExamsController < ApplicationController
       quiz.choose = ['(1)aaa', '(2)bbbb', '(3)ccc']
       ##@objlist << quiz
     }
-=begin    
     quiz01 = Quiz.new
     quiz01.id = 1
     quiz01.text = '返事の「はい」は一回でいいと怒られたことがありますか。'
@@ -55,5 +54,4 @@ class ExamsController < ApplicationController
     
     redirect_to "/exams"
   end
-=end
 end

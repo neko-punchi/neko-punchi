@@ -15,7 +15,8 @@
 
       <!--ダイアログ -->
       <div id="<%= quiz_number %>" class="dialog-modal" title="<%= title %>">
-        <%= form_tag :action=>:answer, :method=>:put, :remote=>true do %>
+        <%= form_tag ({:action=>:answer,{:id=>"aa",:method=>post}}) do %>
+
             <!-- 問題文 -->
             <p><%= quiz.text %></p>
             <%= hidden_field_tag 'id', quiz.id %>

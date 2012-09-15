@@ -21,7 +21,6 @@ $(($)->
   $('#exam-simple-submit').live('click', -> alert("loading"))
   #submit button
   $('.submit_button').click(->
-     alert($(this).parent().html())
      $(this).parent().submit()
   )
 )
