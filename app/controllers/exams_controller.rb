@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class ExamsController < ApplicationController
   # GET /exams
   # GET /exams.json
@@ -9,8 +10,23 @@ class ExamsController < ApplicationController
       quiz.id = i + 1
       quiz.text = 'what\'s dmesg ?'
       quiz.choose = ['(1)aaa', '(2)bbbb', '(3)ccc']
-      @objlist << quiz
+      ##@objlist << quiz
     }
+    
+    quiz01 = Quiz.new
+    quiz01.id = 1
+    quiz01.text = '返事の「はい」は一回でいいと怒られたことがありますか。'
+    quiz01.choose = "(1)yes,(2)no"
+    quiz01.answer = '1'
+    @objlist << quiz01
+    
+    quiz02 = Quiz.new
+    quiz02.id = 2
+    quiz02.text = 'ももいろクローバで一番歌がうまいやつの色を答えなさい。'
+    quiz02.answer = 'green'
+    @objlist << quiz02
+
+
 
     #status = 'success'
     #render json: { status: status, data: @quiz}
@@ -30,14 +46,14 @@ class ExamsController < ApplicationController
   end
 
   def answer
+    puts "answer in"
     quiz_id = params[:id]
     amswer = params[:answer]
+    puts quiz_id
+    puts answer
     @quiz = Quiz.new
-    @quiz.id = 98
-    @quiz.text = 'wow'
-    @quiz.choose = ['(1)aaa', '(2)bbbb', '(3)ccc']
-    num = 1
-    render json: {number: num, quiz: @quiz}
+    status = 'success'
+    render json: { status: status, data: @quiz}
   end
 
 end

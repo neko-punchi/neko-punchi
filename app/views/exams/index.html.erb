@@ -1,32 +1,39 @@
 
 <div id='exam-contents'>
-  <div id='exam-pre'>
-    <h1>試験</h1>
-    <%= link_to('スタート', {:action => 'show'},
-       :id => 'start-link',
-       :remote => true)
-     %>
-  </div>
 
-  <div id='exam-question'>
-      <h1 id='exam-number'>問題nn</h1>
-      <p id="exam-text"></p>
-      <%= form_tag(url_for(:action=>'answer'), :remote=>true) do %>
-        <div id='exam-answer'>
-        </div>
-      <% end %>
-  </div>
+  <h1>試験</h1>
 
+  <!-- 問題一覧 -->
   <% @objlist.each do |quiz| %>
     <div class="exam_box" style="float:left">
+      
       <% title = sprintf("問題 %02d", quiz.id) %>
       <% quiz_number = sprintf("quiz_%02d", quiz.id) %>
+
+      <!-- 問題ボタン -->
       <label  class='exam_button' value="<%= quiz_number %>"><%= title %></label>
+
+      <!--ダイアログ -->
       <div id="<%= quiz_number %>" class="dialog-modal" title="<%= title %>">
-        <label><%= quiz.text %></label>
-        <label class='sexam_button'><%= quiz.text %></label>
-      </div>
-    </div>
+        <%= form_tag :action=>:answer, :method=>:put, :remote=>true do %>
+            <!-- 問題文 -->
+            <p><%= quiz.text %></p>
+            <%= hidden_field_tag 'id', quiz.id %>
+            <% if quiz.choose != nil then %>
+                <!-- 回答選択ボタン -->
+                <% lists = quiz.choose.split(',') %>
+                <% lists.each do |item| %>
+                    <label class='submit_button'><%= item %></label>
+                <% end %>
+            <% else  %>
+                <!-- 回答入力フィールド -->
+                <%= text_field_tag 'answer' ,'', :size => 20 %> 
+                <label class='submit_button'>answer</label>
+            <% end %>
+        <% end %>
+      </div><!--End of div class(dialog-model) -->
+    </div><!-- End of div class(exam_box) -->
   <% end %>
+
   <div style=" clear: both;"/>
 </div>
