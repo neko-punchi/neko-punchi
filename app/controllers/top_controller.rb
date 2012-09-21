@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-class ExamsController < ApplicationController
-  # GET /exams
-  # GET /exams.json
+class TopController < ApplicationController
+  # GET /top
+  # GET /top.json
   def index
     #create quizzes
     @objlist = []
@@ -12,33 +12,7 @@ class ExamsController < ApplicationController
       quiz.choose = ['(1)aaa', '(2)bbbb', '(3)ccc']
       ##@objlist << quiz
     }
-<<<<<<< HEAD
-
-    @quizzes = Quiz.all
-    i = 0
-    @quizzes.each{ |q|
-      quiz = Quiz.new
-      quiz.id = i
-      quiz.text = q.text
-      quiz.choose = q.choose
-      quiz.answer = q.answer
-      @objlist << quiz
-      i += 1
-    }
-#    quiz01 = Quiz.new
-#    quiz01.id = 1
-#    quiz01.text = '返事の「はい」は一回でいいと怒られたことがありますか。'
-#    quiz01.choose = "(1)yes,(2)no"
-#    quiz01.answer = '1'
-#    @objlist << quiz01
     
-#    quiz02 = Quiz.new
-#    quiz02.id = 2
-#    quiz02.text = 'ももいろクローバで一番歌がうまいやつの色を答えなさい。'
-#    quiz02.answer = 'green'
-#    @objlist << quiz02
-=======
-=begin    
     quiz01 = Quiz.new
     quiz01.id = 1
     quiz01.text = '返事の「はい」は一回でいいと怒られたことがありますか。'
@@ -51,7 +25,6 @@ class ExamsController < ApplicationController
     quiz02.text = 'ももいろクローバで一番歌がうまいやつの色を答えなさい。'
     quiz02.answer = 'green'
     @objlist << quiz02
->>>>>>> 99f80f7ec525f7e923800087d3ace8e4fd0d48cf
 
 
 
@@ -75,12 +48,12 @@ class ExamsController < ApplicationController
   def answer
     puts "answer in"
     quiz_id = params[:id]
-    answer = params[:answer]
-    ##status = 'success'
-    ##render json: { status: status, data: "ok"}
-    ##render :action => "index"
-    
-    redirect_to "/exams"
+    amswer = params[:answer]
+    puts quiz_id
+    puts answer
+    @quiz = Quiz.new
+    status = 'success'
+    render json: { status: status, data: @quiz}
   end
-=end
+
 end

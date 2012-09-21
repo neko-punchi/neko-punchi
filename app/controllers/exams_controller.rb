@@ -51,5 +51,4 @@ class ExamsController < ApplicationController
     
     redirect_to "/exams"
   end
-
 end
