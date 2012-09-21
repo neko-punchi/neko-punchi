@@ -5,3 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Quizzes.create(:id = '1',:text => 'test01',choose => "(1)yes,(2)no",answer => '1')
