@@ -4,10 +4,12 @@
   <h1>試験</h1>
 
   <!-- 問題一覧 -->
+  <% number = 0 %>
   <% @objlist.each do |quiz| %>
+    <% number += 1 %>
     <div class="exam_box" style="float:left">
       
-      <% title = sprintf("問題 %02d", quiz.id) %>
+      <% title = sprintf("問題 %02d", number) %>
       <% quiz_number = sprintf("quiz_%02d", quiz.id) %>
 
       <!-- 問題ボタン -->

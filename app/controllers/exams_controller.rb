@@ -46,13 +46,14 @@ class ExamsController < ApplicationController
     answer = params[:answer]
     
     message = "とても残念だよ、君なら解けると思ったんだが・・・　不正解だ"
+    status = "failed"
     if answer == '(1)aaa' then
       message = "よくできたね！正解だよ。"
+      status = "incorrect"
     end
-    render text: message
-    ##render :action => "index"
+    #render text: message
     
-    ##render json: {number: num, quiz: @quiz}
+    render json: {status: status, msg: message}
     #redirect_to "/exams"
   end
 end

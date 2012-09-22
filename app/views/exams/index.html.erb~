@@ -4,10 +4,11 @@
   <h1>試験</h1>
 
   <!-- 問題一覧 -->
+  <% number = 1 %>
   <% @objlist.each do |quiz| %>
     <div class="exam_box" style="float:left">
       
-      <% title = sprintf("問題 %02d", quiz.id) %>
+      <% title = sprintf("問題 %02d", number) %>
       <% quiz_number = sprintf("quiz_%02d", quiz.id) %>
 
       <!-- 問題ボタン -->
@@ -30,7 +31,7 @@
                 <%= text_field_tag 'answer' ,'', :size => 20 %> 
                 <label class='submit_button'>answer</label>
             <% end %>
-            <p name="message">message1</p>
+            <p name="message"></p>
         <% end %>
       </div><!--End of div class(dialog-model) -->
     </div><!-- End of div class(exam_box) -->

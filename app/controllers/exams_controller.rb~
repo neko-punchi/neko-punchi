@@ -24,18 +24,6 @@ class ExamsController < ApplicationController
       quiz.choose = "(1)aaa, (2)bbbb, (3)ccc"
       @objlist << quiz
     }
-
-    @quizzes = Quiz.all
-    i = 0
-    @quizzes.each{ |q|
-      quiz = Quiz.new
-      quiz.id = i
-      quiz.text = q.text
-      quiz.choose = q.choose
-      quiz.answer = q.answer
-      @objlist << quiz
-      i += 1
-    }
     #status = 'success'
     #render json: { status: status, data: @quiz}
   end
@@ -58,8 +46,10 @@ class ExamsController < ApplicationController
     answer = params[:answer]
     
     message = "とても残念だよ、君なら解けると思ったんだが・・・　不正解だ"
+    status = "failed"
     if answer == '(1)aaa' then
       message = "よくできたね！正解だよ。"
+      status = "incorrect"
     end
     render text: message
     ##render :action => "index"

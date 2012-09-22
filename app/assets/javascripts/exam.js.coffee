@@ -37,16 +37,18 @@ $(($)->
      request += answer
      #alert(request)
 
+     form.find("label").button('disable')
 
      $.ajax({
         url: "exams/answer",
         type: "POST",
         data: request
-        success: (msg)->
-            #alert(msg)
+        success: (data)->
+            #alert(data.msg)
             line = form.children("p[name=message]")
-            line.text(msg)
+            line.text(data.msg)
             #alert(line.text())
+            #$('.exam_button'[value$=quiz_id]).button('disable')
 
         error: (xhr, status, err)->
             alert("error")
