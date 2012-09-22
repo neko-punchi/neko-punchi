@@ -2,6 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
+square = (x) -> x * x
 
 $(($)->
   #loading
@@ -18,9 +19,33 @@ $(($)->
   $('.exam_button').button({ text: true, icons: { primary :'ui-icon-carat-1-e'}})
   $('.submit_button').button({ text: true, icons: { primary :'ui-icon-carat-1-e'}})
 
-  $('#exam-simple-submit').live('click', -> alert("loading"))
   #submit button
   $('.submit_button').click(->
-     $(this).parent().submit()
+     answer = $(this).text()
+     #alert(answer)
+     #following are quiz_id search block
+     form = $(this).parent()
+     quiz_id = form.children("input[name=quiz_id]")
+     #alert(quiz_id.val())
+     request = "quiz_id="
+     request += quiz_id.val()
+     request += "&answer='"
+     request += answer
+     request += "'"
+     #alert(request)
+
+     $.ajax({
+        url: "exams/answer",
+        type: "POST",
+        data: request
+        success: (msg)->
+            alert("yes:" + msg)
+        
+        error: (xhr, status, err)->
+            alert("error")
+
+     })
+
+     #$(this).parent().submit()
   )
 )

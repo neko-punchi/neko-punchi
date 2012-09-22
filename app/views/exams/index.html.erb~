@@ -15,11 +15,11 @@
 
       <!--ダイアログ -->
       <div id="<%= quiz_number %>" class="dialog-modal" title="<%= title %>">
-        <%= form_tag ({:action=>:answer,{:id=>"aa",:method=>post}}) do %>
-
+        <%= form_tag :action=>:answer, :method=>:put, :remote=>false do %>
             <!-- 問題文 -->
             <p><%= quiz.text %></p>
-            <%= hidden_field_tag 'id', quiz.id %>
+            <input name="quiz_id" type="hidden" value="<%=quiz.id%>" />
+            <%= hidden_field_tag :quiz_id, quiz.id %>
             <% if quiz.choose != nil then %>
                 <!-- 回答選択ボタン -->
                 <% lists = quiz.choose.split(',') %>

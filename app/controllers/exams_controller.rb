@@ -5,13 +5,6 @@ class ExamsController < ApplicationController
   def index
     #create quizzes
     @objlist = []
-    30.times.each { |i|
-      quiz = Quiz.new
-      quiz.id = i + 1
-      quiz.text = 'what\'s dmesg ?'
-      quiz.choose = ['(1)aaa', '(2)bbbb', '(3)ccc']
-      ##@objlist << quiz
-    }
 
     @quizzes = Quiz.all
     i = 0
@@ -24,6 +17,14 @@ class ExamsController < ApplicationController
       @objlist << quiz
       i += 1
     }
+    30.times.each { |i|
+      quiz = Quiz.new
+      quiz.id = i + 31
+      quiz.text = 'what\'s dmesg ?'
+      quiz.choose = "(1)aaa, (2)bbbb, (3)ccc"
+      @objlist << quiz
+    }
+
     #status = 'success'
     #render json: { status: status, data: @quiz}
   end
@@ -43,12 +44,13 @@ class ExamsController < ApplicationController
 
   def answer
     puts "answer in"
-    quiz_id = params[:id]
-    answer = params[:answer]
-    ##status = 'success'
-    ##render json: { status: status, data: "ok"}
+    p quiz_id = params[:quiz_id]
+    p answer = params[:answer]
+    status = 'success'
+    render text: "よくできたね！正解だよ。"
     ##render :action => "index"
     
-    redirect_to "/exams"
+    ##render json: {number: num, quiz: @quiz}
+    #redirect_to "/exams"
   end
 end
