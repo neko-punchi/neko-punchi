@@ -24,18 +24,6 @@ class ExamsController < ApplicationController
       quiz.choose = "(1)aaa, (2)bbbb, (3)ccc"
       @objlist << quiz
     }
-
-    @quizzes = Quiz.all
-    i = 0
-    @quizzes.each{ |q|
-      quiz = Quiz.new
-      quiz.id = i
-      quiz.text = q.text
-      quiz.choose = q.choose
-      quiz.answer = q.answer
-      @objlist << quiz
-      i += 1
-    }
     #status = 'success'
     #render json: { status: status, data: @quiz}
   end
