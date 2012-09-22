@@ -4,15 +4,17 @@
   <h1>試験</h1>
 
   <!-- 問題一覧 -->
-  <% number = 1 %>
+  <% number = 0 %>
   <% @objlist.each do |quiz| %>
+    <% number += 1 %>
     <div class="exam_box" style="float:left">
       
       <% title = sprintf("問題 %02d", number) %>
-      <% quiz_number = sprintf("quiz_%02d", quiz.id) %>
+      <% quiz_number = sprintf("quiz_%02d", number) %>
+      <% quiz_buttonid = sprintf("button_%02d", number) %>
 
       <!-- 問題ボタン -->
-      <label  class='exam_button' value="<%= quiz_number %>"><%= title %></label>
+      <label id="<%= quiz_buttonid %>" class='exam_button' value="<%= quiz_number %>"><%= title %></label>
 
       <!--ダイアログ -->
       <div id="<%= quiz_number %>" class="dialog-modal" title="<%= title %>">
@@ -20,6 +22,7 @@
             <!-- 問題文 -->
             <p><%= quiz.text %></p>
             <input name="quiz_id" type="hidden" value="<%=quiz.id%>" />
+            <input name="quiz_number" type="hidden" value="<%=quiz_number_elementid%>" />
             <% if quiz.choose != nil then %>
                 <!-- 回答選択ボタン -->
                 <% lists = quiz.choose.split(',') %>

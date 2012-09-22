@@ -31,6 +31,8 @@ $(($)->
      form = $(this).parent()
      quiz_id = form.children("input[name=quiz_id]")
      #alert(quiz_id.val())
+     quiz_number = form.children("input[name=quiz_number]").val()
+     alert(quiz_number)
      request = "quiz_id="
      request += quiz_id.val()
      request += "&answer="
@@ -38,7 +40,7 @@ $(($)->
      #alert(request)
 
      form.find("label").button('disable')
-
+     $(quiz_number).button('disable')
 
      $.ajax({
         url: "exams/answer",
@@ -49,7 +51,6 @@ $(($)->
             line = form.children("p[name=message]")
             line.text(data.msg)
             #alert(line.text())
-            #$('.exam_button'[value$=quiz_id]).button('disable')
 
         error: (xhr, status, err)->
             alert("error")
