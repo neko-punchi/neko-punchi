@@ -47,7 +47,7 @@ class ExamsController < ApplicationController
     p quiz_id = params[:quiz_id]
     p answer = params[:answer]
     status = 'success'
-    render text: "you win"
+    render text: "よくできたね！正解だよ。"
     ##render :action => "index"
     
     ##render json: {number: num, quiz: @quiz}

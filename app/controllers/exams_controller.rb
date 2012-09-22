@@ -43,11 +43,14 @@ class ExamsController < ApplicationController
   end
 
   def answer
-    puts "answer in"
-    p quiz_id = params[:quiz_id]
-    p answer = params[:answer]
-    status = 'success'
-    render text: "よくできたね！正解だよ。"
+    quiz_id = params[:quiz_id]
+    answer = params[:answer]
+    
+    message = "とても残念だよ、君なら解けると思ったんだが・・・　不正解だ"
+    if answer == '(1)aaa' then
+      message = "よくできたね！正解だよ。"
+    end
+    render text: message
     ##render :action => "index"
     
     ##render json: {number: num, quiz: @quiz}

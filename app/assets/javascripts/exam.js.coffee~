@@ -9,7 +9,11 @@ $(($)->
   $( ".dialog-modal" ).dialog({
     height: 340,
     modal: true,
-    autoOpen: false
+    autoOpen: false,
+    buttons: {
+        "閉じる": (event) ->
+            $(this).dialog("close");
+    }
   })
   $('.exam_button').click(->
     quiz_num = $(this).attr("value")
@@ -34,16 +38,19 @@ $(($)->
      request += "'"
      #alert(request)
 
+
      $.ajax({
         url: "exams/answer",
         type: "POST",
         data: request
         success: (msg)->
-            alert("yes:" + msg)
-        
+            #alert(msg)
+            line = form.children("p[name=message]")
+            line.text(msg)
+            #alert(line.text())
+
         error: (xhr, status, err)->
             alert("error")
-
      })
 
      #$(this).parent().submit()

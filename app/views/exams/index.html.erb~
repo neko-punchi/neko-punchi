@@ -19,7 +19,6 @@
             <!-- 問題文 -->
             <p><%= quiz.text %></p>
             <input name="quiz_id" type="hidden" value="<%=quiz.id%>" />
-            <%= hidden_field_tag :quiz_id, quiz.id %>
             <% if quiz.choose != nil then %>
                 <!-- 回答選択ボタン -->
                 <% lists = quiz.choose.split(',') %>
@@ -31,6 +30,7 @@
                 <%= text_field_tag 'answer' ,'', :size => 20 %> 
                 <label class='submit_button'>answer</label>
             <% end %>
+            <p name="message">message1</p>
         <% end %>
       </div><!--End of div class(dialog-model) -->
     </div><!-- End of div class(exam_box) -->
