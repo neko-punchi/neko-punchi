@@ -7,7 +7,6 @@ square = (x) -> x * x
 $(($)->
   #loading
   $( ".dialog-modal" ).dialog({
-    height: 340,
     modal: true,
     autoOpen: false,
     buttons: {
