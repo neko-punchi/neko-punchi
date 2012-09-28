@@ -6,17 +6,17 @@ class ExamsController < ApplicationController
     #create quizzes
     @objlist = []
 
-    @quizzes = Quiz.all
-    i = 0
-    @quizzes.each{ |q|
-      quiz = Quiz.new
-      quiz.id = i
-      quiz.text = q.text
-      quiz.choose = q.choose
-      quiz.answer = q.answer
-      @objlist << quiz
-      i += 1
-    }
+    @objlist = Quiz.all
+##    i = 0
+##    @quizzes.each{ |q|
+##      quiz = Quiz.new
+##      quiz.id = i
+##      quiz.text = q.text
+##      quiz.choose = q.choose
+##      quiz.answer = q.answer
+##      @objlist << quiz
+##      i += 1
+##    }
     30.times.each { |i|
       quiz = Quiz.new
       quiz.id = i + 31
@@ -28,28 +28,28 @@ class ExamsController < ApplicationController
     #render json: { status: status, data: @quiz}
   end
 
-  def show
-    quiz_id = params[:id]
-    @quiz = Quiz.new
-    @quiz.id = 99
-    @quiz.text = 'which is text editor?'
-    @quiz.choose = ['vi', 'cat', 'more', 'less']
-    
-    num = 1
-
-    render json: {number: num, quiz: @quiz}
-    
-  end
+##  def show
+##    quiz_id = params[:id]
+##    @quiz = Quiz.new
+##    @quiz.id = 99
+##    @quiz.text = 'which is text editor?'
+##    @quiz.choose = ['vi', 'cat', 'more', 'less']
+##    
+##    num = 1
+##
+##    render json: {number: num, quiz: @quiz}
+##    
+##  end
 
   def answer
     quiz_id = params[:quiz_id]
     answer = params[:answer]
     
     message = "とても残念だよ、君なら解けると思ったんだが・・・　不正解だ"
-    status = "failed"
+    status = "incorrect"
     if answer == '(1)aaa' then
       message = "よくできたね！正解だよ。"
-      status = "incorrect"
+      status = "correct"
     end
     #render text: message
     
