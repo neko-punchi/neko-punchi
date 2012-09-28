@@ -9,14 +9,21 @@ ElearnNekoPunchi::Application.routes.draw do
 
   resources :categories
 
+  resources :monosets
+
+  get "top/index"
+  root :to => "top#index"
+  match 'top' , :to => 'top#index'
+  #OmniAuth
+  match "/auth/:provider/callback" => "sessions#callback"
+  match "/logout" => "sessions#destroy", :as => :logout
+
   match 'exams' , :to => 'exams#index'
   match 'exams/show' , :to => 'exams#show'
   match 'exams/answer' , :to => 'exams#answer', :via => 'post'
   match 'exams/next' , :to => 'exams#next', :via => 'get'
   match 'exams/prev' , :to => 'exams#prev', :via => 'get'
 
-  match 'top' , :to => 'top#index'
-  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

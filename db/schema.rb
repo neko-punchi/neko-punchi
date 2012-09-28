@@ -56,4 +56,12 @@ ActiveRecord::Schema.define(:version => 20120927162745) do
 
   add_index "sub_categories", ["category_id"], :name => "index_sub_categories_on_category_id"
 
+  create_table "users", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 end
