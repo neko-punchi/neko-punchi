@@ -3,20 +3,11 @@ class ExamsController < ApplicationController
   # GET /exams
   # GET /exams.json
   def index
-    #create quizzes
-    @objlist = []
+   
+    #objlistには問題を詰め込む
+    @objlist = Quiz.all
 
-    @quizzes = Quiz.all
-    i = 0
-    @quizzes.each{ |q|
-      quiz = Quiz.new
-      quiz.id = i
-      quiz.text = q.text
-      quiz.choose = q.choose
-      quiz.answer = q.answer
-      @objlist << quiz
-      i += 1
-    }
+    #選択問題サンプル
     30.times.each { |i|
       quiz = Quiz.new
       quiz.id = i + 31
@@ -24,22 +15,19 @@ class ExamsController < ApplicationController
       quiz.choose = "(1)aaa, (2)bbbb, (3)ccc"
       @objlist << quiz
     }
+
+    #入力問題サンプル
+    10.times.each { |i|
+      quiz = Quiz.new
+      quiz.id = i + 61
+      quiz.text = 'ファイルの末尾数行を表示するコマンドを答えなさい！'
+      
+      @objlist << quiz
+    }
     #status = 'success'
     #render json: { status: status, data: @quiz}
   end
 
-  def show
-    quiz_id = params[:id]
-    @quiz = Quiz.new
-    @quiz.id = 99
-    @quiz.text = 'which is text editor?'
-    @quiz.choose = ['vi', 'cat', 'more', 'less']
-    
-    num = 1
-
-    render json: {number: num, quiz: @quiz}
-    
-  end
 
   def answer
     quiz_id = params[:quiz_id]
