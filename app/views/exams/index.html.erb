@@ -27,12 +27,12 @@
                 <!-- 回答選択ボタン -->
                 <% lists = quiz.choose.split(',') %>
                 <% lists.each do |item| %>
-                    <label class='submit_button'><%= item %></label>
+                    <label class='answer_button'><%= item %></label>
                 <% end %>
             <% else  %>
                 <!-- 回答入力フィールド -->
-                <%= text_field_tag 'answer' ,'', :size => 20 %> 
-                <label class='submit_button'>answer</label>
+                <input name="answer" size="20" type="text" value=""/>
+                <label class='submit_button'>回答する</label>
             <% end %>
             <p name="message"></p>
         <% end %>

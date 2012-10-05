@@ -3,6 +3,7 @@ class ExamsController < ApplicationController
   # GET /exams
   # GET /exams.json
   def index
+
     #create quizzes
     @objlist = []
 ##    i = 0
@@ -27,7 +28,6 @@ class ExamsController < ApplicationController
       @objlist << quiz
     }
 
-    
     #入力問題サンプル
     10.times.each { |i|
       quiz = Quiz.new

@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
       if user.provider == "facebook"
         user.name = auth["info"]["name"]
+      elsif user.provider == "google_oauth2"
+        user.name = auth["info"]["name"]
       else
         user.name = auth["info"]["nickname"]
       end
