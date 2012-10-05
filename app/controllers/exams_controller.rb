@@ -5,7 +5,6 @@ class ExamsController < ApplicationController
   def index
     #create quizzes
     @objlist = []
-    @objlist = Relation.joins(:quiz, :category, :sub_category)
 ##    i = 0
 ##    @quizzes.each{ |q|
 ##      quiz = Quiz.new
@@ -16,31 +15,33 @@ class ExamsController < ApplicationController
 ##      @objlist << quiz
 ##      i += 1
 ##    }
-    num_quiz = 30
-    num_quiz.times.each { |i|
+    #objlistには問題を詰め込む（DBから取得した値で）
+    @objlist = Relation.joins(:quiz, :category, :sub_category)
+
+    #選択問題サンプル
+    30.times.each { |i|
       quiz = Quiz.new
       quiz.id = i + 31
       quiz.text = 'test' + i.to_s
       quiz.choose = "(1)aaa, (2)bbbb, (3)ccc"
       @objlist << quiz
     }
+
+    
+    #入力問題サンプル
+    10.times.each { |i|
+      quiz = Quiz.new
+      quiz.id = i + 61
+      quiz.text = 'ファイルの末尾数行を表示するコマンドを答えなさい！'
+      
+      @objlist << quiz
+    }
+    #問題をランダムにシャッフル
     @objlist.shuffle!
     #status = 'success'
     #render json: { status: status, data: @quiz}
   end
 
-##  def show
-##    quiz_id = params[:id]
-##    @quiz = Quiz.new
-##    @quiz.id = 99
-##    @quiz.text = 'which is text editor?'
-##    @quiz.choose = ['vi', 'cat', 'more', 'less']
-##    
-##    num = 1
-##
-##    render json: {number: num, quiz: @quiz}
-##    
-##  end
 
   def answer
     quiz_id = params[:quiz_id]
