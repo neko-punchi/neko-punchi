@@ -5,8 +5,7 @@ class ExamsController < ApplicationController
   def index
     #create quizzes
     @objlist = []
-
-    @objlist = Quiz.all
+    @objlist = Relation.joins(:quiz, :category, :sub_category)
 ##    i = 0
 ##    @quizzes.each{ |q|
 ##      quiz = Quiz.new
@@ -17,13 +16,15 @@ class ExamsController < ApplicationController
 ##      @objlist << quiz
 ##      i += 1
 ##    }
-    30.times.each { |i|
+    num_quiz = 30
+    num_quiz.times.each { |i|
       quiz = Quiz.new
       quiz.id = i + 31
-      quiz.text = 'what\'s dmesg ?'
+      quiz.text = 'test' + i.to_s
       quiz.choose = "(1)aaa, (2)bbbb, (3)ccc"
       @objlist << quiz
     }
+    @objlist.shuffle!
     #status = 'success'
     #render json: { status: status, data: @quiz}
   end
