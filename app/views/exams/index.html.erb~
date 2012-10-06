@@ -9,12 +9,16 @@
     <% number += 1 %>
     <div class="exam_box" style="float:left">
       
-      <% title = sprintf("問題 %02d", number) %>
+      <% title = sprintf("問題 %02d\n", number) %>
       <% quiz_number = sprintf("quiz_%02d", number) %>
       <% quiz_buttonid = sprintf("button_%02d", number) %>
 
       <!-- 問題ボタン -->
+      <div style="margin : 3px ;padding:3px; background-color:#CCFFFF;">
       <label id="<%= quiz_buttonid %>" class='exam_button' value="<%= quiz_number %>"><%= title %></label>
+        <p>アーキテクチャ</p>
+        <p>正答率:90%</p>
+      </div>
 
       <!--ダイアログ -->
       <div id="<%= quiz_number %>" class="dialog-modal" title="<%= title %>">
@@ -31,7 +35,6 @@
                 <% end %>
             <% else  %>
                 <!-- 回答入力フィールド -->
-                <!-- <%= text_field_tag 'answer' ,'', :size => 20 %> -->
                 <input name="answer" size="20" type="text" value=""/>
                 <label class='submit_button'>回答する</label>
             <% end %>

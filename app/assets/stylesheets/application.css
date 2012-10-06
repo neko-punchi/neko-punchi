@@ -34,3 +34,11 @@ div#contents {
   border: solid 1px #ccc;  
 }
 
+div.panel {
+  margin: 5px;  
+  padding: 5px;
+  border-radius: 5px;
+  background: -moz-linear-gradient(top, #ccffff, #ffffff);　/* Firefox用 */  
+  background: -webkit-gradient(linear, top, bottom, from(#ccffff), to(#ffffff));　/* Safari,Google Chrome用 */  
+}
+

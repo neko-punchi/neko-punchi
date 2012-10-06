@@ -21,16 +21,16 @@ ActiveRecord::Schema.define(:version => 20120927162745) do
 
   create_table "dictionaries", :force => true do |t|
     t.string   "word",       :limit => 100, :null => false
-    t.text     "text",                      :null => false
+    t.text     "text",       :limit => 400, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "quizzes", :force => true do |t|
-    t.text     "text",       :null => false
-    t.text     "choose"
-    t.string   "answer"
-    t.text     "hint"
+    t.text     "text",       :limit => 1500, :null => false
+    t.text     "choose",     :limit => 800
+    t.string   "answer",     :limit => 50
+    t.text     "hint",       :limit => 1500
     t.datetime "created_at"
     t.datetime "updated_at"
   end
