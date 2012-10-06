@@ -4,9 +4,11 @@ class ExamsController < ApplicationController
   # GET /exams.json
   def index
 <<<<<<< HEAD
+=======
+
+>>>>>>> fd7cdbcf1d1f6c88941fb9ed60256eb6d3f0a48e
     #create quizzes
     @objlist = []
-    @objlist = Relation.joins(:quiz, :category, :sub_category)
 ##    i = 0
 ##    @quizzes.each{ |q|
 ##      quiz = Quiz.new
@@ -17,26 +19,19 @@ class ExamsController < ApplicationController
 ##      @objlist << quiz
 ##      i += 1
 ##    }
-    num_quiz = 30
-    num_quiz.times.each { |i|
-=======
-   
     #objlistには問題を詰め込む（DBから取得した値で）
-    @objlist = Quiz.all
+    @objlist = Relation.joins(:quiz, :category, :sub_category)
 
     #選択問題サンプル
     30.times.each { |i|
->>>>>>> a18b834e2b08dea263a4f3815e05f4e552d719c3
       quiz = Quiz.new
       quiz.id = i + 31
       quiz.text = 'test' + i.to_s
       quiz.choose = "(1)aaa, (2)bbbb, (3)ccc"
       @objlist << quiz
     }
-<<<<<<< HEAD
-    @objlist.shuffle!
-=======
 
+    
     #入力問題サンプル
     10.times.each { |i|
       quiz = Quiz.new
@@ -45,7 +40,8 @@ class ExamsController < ApplicationController
       
       @objlist << quiz
     }
->>>>>>> a18b834e2b08dea263a4f3815e05f4e552d719c3
+    #問題をランダムにシャッフル
+    @objlist.shuffle!
     #status = 'success'
     #render json: { status: status, data: @quiz}
   end
