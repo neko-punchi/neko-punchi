@@ -35,6 +35,9 @@ div#contents {
 }
 
 div.panel {
+  border-style: groove;
+  border-width: 1px;
+  border-color: #ccffff;
   margin: 5px;  
   padding: 5px;
   border-radius: 5px;

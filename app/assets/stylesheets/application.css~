@@ -35,9 +35,12 @@ div#contents {
 }
 
 div.panel {
+  border-style: groove;
+  border-width: 1px;
+  border-color:#888;
   margin: 5px;  
   padding: 5px;
-  border-radius: 15px;
+  border-radius: 5px;
   background: -moz-linear-gradient(top, #ccffff, #ffffff);　/* Firefox用 */  
   background: -webkit-gradient(linear, top, bottom, from(#ccffff), to(#ffffff));　/* Safari,Google Chrome用 */  
 }
