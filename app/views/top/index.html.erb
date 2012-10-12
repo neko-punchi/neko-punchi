@@ -1,7 +1,12 @@
 
 <div id='exam-contents'>
 
-	<h1>top</h1>
-	<%= link_to "テスト開始する", :controller => "exams", :action => "index" %>
-	# => <a href="/exams">テスト開始！</a> 
+  <ul>
+  <li><%= link_to "テスト開始する", :controller => "exams", :action => "index" %></li>
+    <% if current_user %>
+      <li><%= link_to "あなたの成績" ,logout_path %></li>
+    <% else %>
+  　  <li>あなたの成績（ログインしないと表示できません）</li>
+    <% end %>
+  </ul>
 </div>
