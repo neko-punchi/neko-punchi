@@ -4,12 +4,13 @@ class User < ActiveRecord::Base
       user.provider = auth["provider"]
       user.uid = auth["uid"]
 
-      if user.provider == "facebook"
-        user.name = auth["info"]["name"]
-      elsif user.provider == "google_oauth2"
-        user.name = auth["info"]["name"]
-      else
-        user.name = auth["info"]["nickname"]
+      case user.provider
+        when "facebook" then
+          user.name = auth["info"]["name"]
+        when "google_oauth2" then
+          user.name = auth["info"]["name"]
+        when "twitter" then
+          user.name = auth["info"]["nickname"]
       end
 
     end
