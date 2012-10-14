@@ -6,11 +6,6 @@
 </p>
 
 <p>
-  <b>SubText:</b>
-  <%= @quiz.sub_text %>
-</p>
-
-<p>
   <b>Choose:</b>
   <%= @quiz.choose %>
 </p>

@@ -3,7 +3,6 @@
 <table>
   <tr>
     <th>Text</th>
-    <th>Sub_Text</th>
     <th>Choose</th>
     <th>Answer</th>
     <th>Hint</th>
@@ -15,7 +14,6 @@
 <% @quizzes.each do |quiz| %>
   <tr>
     <td><%= quiz.text %></td>
-    <td><%= quiz.sub_text %></td>
     <td><%= quiz.choose %></td>
     <td><%= quiz.answer %></td>
     <td><%= quiz.hint %></td>

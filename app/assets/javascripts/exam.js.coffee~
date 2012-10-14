@@ -27,7 +27,7 @@ $(($)->
   $('.submit_button').click(->
      form = $(this).parent()
      answer = form.children("input[name=answer]").val()
-      quiz_id = form.children("input[name=quiz_id]")
+     quiz_id = form.children("input[name=quiz_id]")
      #alert(quiz_id.val())
      quiz_number = form.children("input[name=quiz_number]").val()
      #alert(quiz_number)

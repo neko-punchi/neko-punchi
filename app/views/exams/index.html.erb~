@@ -14,7 +14,7 @@
       <% quiz_buttonid = sprintf("button_%02d", number) %>
 
       <!-- 問題ボタン -->
-      <div style="margin : 3px ;padding:3px; background-color:#CCFFFF;">
+      <div class="panel">
       <label id="<%= quiz_buttonid %>" class='exam_button' value="<%= quiz_number %>"><%= title %></label>
         <p>アーキテクチャ</p>
         <p>正答率:90%</p>
@@ -25,6 +25,9 @@
         <%= form_tag :action=>:answer, :method=>:put, :remote=>false do %>
             <!-- 問題文 -->
             <p><%= quiz.text %></p>
+            <% if quiz.sub_text != nil then %>
+                <p><%= quiz.sub_text %></p>
+            <% end %>
             <input name="quiz_id" type="hidden" value="<%=quiz.id%>" />
             <input name="quiz_number" type="hidden" value="#<%=quiz_buttonid%>" />
             <% if quiz.choose != nil then %>

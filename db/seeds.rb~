@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Quizzes.create(:id => '1' 
+Quizzes.create(:id => '1' \
   ,:text => 'viの操作で行をコピーする操作として正しいものを選びなさい。'
   ,:choose => "c,dd,yy,p"
   ,:answer => 'yy')

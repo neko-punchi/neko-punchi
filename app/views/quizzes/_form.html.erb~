@@ -16,10 +16,6 @@
     <%= f.text_area :text %>
   </div>
   <div class="field">
-    <%= f.label :sub_text %><br />
-    <%= f.text_area :sub_text %>
-  </div>
-  <div class="field">
     <%= f.label :choose %><br />
     <%= f.text_area :choose %>
   </div>
