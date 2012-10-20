@@ -30,8 +30,8 @@ class ExamsController < ApplicationController
     #}
 
     #objlistには問題を詰め込む（DBから取得した値で）
-    @objlist << Relation.joins(:quiz, :category, :sub_category)
-    @objlist.map { |x| p x}
+    #@objlist << Relation.joins(:quiz, :category, :sub_category)
+    #@objlist.map { |x| p x}
 
 
     #選択問題サンプル
