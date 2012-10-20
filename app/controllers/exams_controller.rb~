@@ -5,7 +5,7 @@ class ExamsController < ApplicationController
   def index
     #create quizzes
     @objlist = []
-    i = 0
+    #i = 0
 ##    @quizzes.each{ |q|
 ##      quiz = Quiz.new
 ##      quiz.id = i
@@ -15,32 +15,34 @@ class ExamsController < ApplicationController
 ##      @objlist << quiz
 ##      i += 1
 ##    }
-    list = Quiz.all
-    list.each {|obj|
-       quiz = Quiz.new
-       puts "text:" + obj.text
-       puts "sub text:" + obj.sub_text.to_s
-       puts "choose:" + obj.choose
-      
-      quiz.id = i + 1
-      quiz.text = obj.text
-      quiz.sub_text = obj.sub_text
-      quiz.choose = obj.choose
-      @objlist << quiz
-    }
+    #list = Quiz.all
+    #list.each {|obj|
+    #   quiz = Quiz.new
+    #   puts "text:" + obj.text
+    #   puts "sub text:" + obj.sub_text.to_s
+    #   puts "choose:" + obj.choose
+    #  
+    #  quiz.id = i + 1
+    #  quiz.text = obj.text
+    #  quiz.sub_text = obj.sub_text
+    #  quiz.choose = obj.choose
+    #  @objlist << quiz
+    #}
 
     #objlistには問題を詰め込む（DBから取得した値で）
-    #@objlist << Relation.joins(:quiz, :category, :sub_category)
+    @objlist << Relation.joins(:quiz, :category, :sub_category)
+    @objlist.map { |x| puts "quizid:" + x}
+
 
     #選択問題サンプル
-    30.times.each { |i|
-      quiz = Quiz.new
-      quiz.id = i + 31
-      quiz.text = 'test' + i.to_s
-      quiz.sub_text = ''
-      quiz.choose = "(1)aaa, (2)bbbb, (3)ccc"
-      @objlist << quiz
-    }
+    #30.times.each { |i|
+    #  quiz = Quiz.new
+    #  quiz.id = i + 31
+    #  quiz.text = 'test' + i.to_s
+    #  quiz.sub_text = ''
+    #  quiz.choose = "(1)aaa, (2)bbbb, (3)ccc"
+    #  @objlist << quiz
+    #}
 
     
     #入力問題サンプル
@@ -53,7 +55,7 @@ class ExamsController < ApplicationController
       @objlist << quiz
     }
     #問題をランダムにシャッフル
-    #@objlist.shuffle!
+    @objlist.shuffle!
   end
 
 
@@ -61,9 +63,10 @@ class ExamsController < ApplicationController
     quiz_id = params[:quiz_id]
     answer = params[:answer]
     
+    quiz = Quiz.find(quiz_id)
     message = "とても残念だよ、君なら解けると思ったんだが・・・　不正解だ"
     status = "incorrect"
-    if answer == '(1)aaa' then
+    if quiz.answer == answer.trim then
       message = "よくできたね！正解だよ。"
       status = "correct"
     end
