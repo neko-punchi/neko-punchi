@@ -1,0 +1,8 @@
+class QuizzesListController < ApplicationController
+  def index
+    @objlist = []
+    @objlist << Relation.joins(:quiz, :category, :sub_category)
+    
+
+  end
+end

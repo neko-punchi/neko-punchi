@@ -1,0 +1,24 @@
+<h1>問題一覧</h1>
+<table>
+  <tbody>
+    <tr>
+      <th>カテゴリ</th>
+      <th>サブカテゴリ</th>
+      <th>問題分</th>
+      <th>サブテキスト</th>
+      <th>選択肢</th>
+      <th>答え</th>
+    </tr>
+      <% @objlist.each do |relation| %>
+        <tr>
+          <td><%= relation.category.category ? relation.category.category : "なし" %></td>
+          <td><%= relation.sub_category.sub_category ? relation.sub_category.sub_category : "なし" %></td>
+          <td><%= relation.quiz.text ? relation.quiz.text : "なし" %></td>
+          <td><%= relation.quiz.sub_text ? relation.quiz.sub_text : "なし" %></td>
+          <td><%= relation.quiz.choose ? relation.quiz.choose : "なし" %></td>
+          <td><%= relation.quiz.answer ? relation.quiz.answer : "なし" %></td>
+        </tr>
+      <% end %>
+    </tr>
+  </tbody>
+</table>
