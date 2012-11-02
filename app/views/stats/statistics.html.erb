@@ -1,0 +1,28 @@
+<h1>Stats#statistics</h1>
+<p>Find me in app/views/stats/statistics.html.erb</p>
+  <script class="code" type="text/javascript">$(document).ready(function(){
+        plot5 = $.jqplot('chart5', [[[2,1], [9,2], [7,3], [10,4]]], {
+            captureRightClick: true,
+            seriesDefaults:{
+                renderer:$.jqplot.BarRenderer,
+                shadowAngle: 135,
+                rendererOptions: {
+                    barDirection: 'horizontal',
+                    highlightMouseDown: true    
+                },
+                pointLabels: {show: true, formatString: '%d'}
+            },
+            legend: {
+                show: true,
+                location: 'e',
+                placement: 'outside'
+            },
+            axes: {
+                yaxis: {
+                    renderer: $.jqplot.CategoryAxisRenderer
+                }
+            }
+        });
+    });
+  </script>
+    <div id="chart5" style="margin-top:20px; margin-left:20px; width:300px; height:300px;"></div>
