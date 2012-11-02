@@ -25,8 +25,8 @@
         <%= form_tag :action=>:answer, :method=>:put, :remote=>false do %>
             <!-- 問題文 -->
             <p><%= quiz.text %></p>
-            <% if quiz.sub_text != nil then %>
-                <p><%= quiz.sub_text %></p>
+            <% if quiz.sub_text != "" then %>
+                <pre><%= quiz.sub_text %>11</pre>
             <% end %>
             <input name="quiz_id" type="hidden" value="<%=quiz.id%>" />
             <input name="quiz_number" type="hidden" value="#<%=quiz_buttonid%>" />
