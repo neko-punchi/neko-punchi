@@ -28,6 +28,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'jqplot-rails', :git => 'git://github.com/eightbitraptor/jqplot-rails.git'
 
 gem 'omniauth'
 gem 'omniauth-twitter'

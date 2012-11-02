@@ -7,4 +7,5 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
+//= require jqplot
 //= require_tree .

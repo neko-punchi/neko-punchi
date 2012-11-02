@@ -1,2 +1,10 @@
 class Quiz < ActiveRecord::Base
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  has_one :relation
+=======
+	has_one :relation
+>>>>>>> a18b834e2b08dea263a4f3815e05f4e552d719c3
+>>>>>>> ac66cdc7ceb1a85d8ce011d88cfa13d7eadb1694
 end
