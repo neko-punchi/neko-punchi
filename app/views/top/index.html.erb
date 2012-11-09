@@ -2,11 +2,20 @@
 <div id='exam-contents'>
 
   <ul>
-  <li><%= link_to "テスト開始する", :controller => "exams", :action => "index" %></li>
+    <li>更新情報</li>
+    <div id="news">
+    <ul>
+      <li>今週のベスト3</li>
+      <li>news<li>
+    </ul>
+  　</div>
+    <li><%= link_to "テスト開始する", :controller => "exams", :action => "index" %></li>
     <% if current_user %>
       <li><%= link_to "あなたの成績" ,logout_path %></li>
     <% else %>
-  　  <li>あなたの成績（ログインしないと表示できません）</li>
+      <li>あなたの成績（ログインしないと表示できません）</li>
     <% end %>
+    <li>管理画面</li>
+
   </ul>
 </div>

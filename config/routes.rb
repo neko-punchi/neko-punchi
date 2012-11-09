@@ -27,6 +27,7 @@ ElearnNekoPunchi::Application.routes.draw do
   match 'quizzes_list/mod' , :to => 'quizzes_list#mod'
 
   match 'stats/statistics' , :to => 'stats#statistics'
+  match 'stats/your_records' , :to => 'stats#your_records'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

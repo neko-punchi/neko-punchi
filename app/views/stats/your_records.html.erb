@@ -1,2 +1,15 @@
 <h1><%= current_user.name %>さんの成績</h1>
-<p>Find me in app/views/stats/your_records.html.erb</p>
+<table>
+  <tr>
+    <th>問題番号</th>
+    <th>正答率</th>
+  </tr>
+
+
+<% @your_answer_rates.each do |line| %>
+  <tr>
+    <td><%= line[0] %></td>
+    <td class="rate"><%= line[1] %></td>
+  </tr>
+<% end %>
+</table>
