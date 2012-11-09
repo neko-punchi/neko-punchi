@@ -7,6 +7,8 @@ $(($)->
   $( ".dialog-modal" ).dialog({
     modal: true,
     autoOpen: false,
+    height: 400,
+    width: 600,
     buttons: {
         "閉じる": (event) ->
             $(this).dialog("close");
