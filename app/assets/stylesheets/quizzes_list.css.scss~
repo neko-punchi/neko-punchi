@@ -13,7 +13,7 @@ text-align:ceter;}
 .quizzes_list_table br{clear:both;}
 
 .quiz_table {margin:0 auto;
-width:102em;
+width:112em;
 text-align:ceter;}
 
 div.quizzes_list_c1{display:block;
