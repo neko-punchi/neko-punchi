@@ -16,7 +16,7 @@
       <!-- 問題ボタン -->
       <div class="panel">
       <label id="<%= quiz_buttonid %>" class='exam_button' value="<%= quiz_number %>"><%= title %></label>
-        <p>アーキテクチャ</p>
+        <p><%= quiz["sub_category"] %></p>
         <p>正答率:90%</p>
       </div>
 
@@ -24,15 +24,15 @@
       <div id="<%= quiz_number %>" class="dialog-modal" title="<%= title %>">
         <%= form_tag :action=>:answer, :method=>:put, :remote=>false do %>
             <!-- 問題文 -->
-            <p><%= quiz.text %></p>
-            <% if quiz.sub_text != "" then %>
-                <pre><%= quiz.sub_text %>11</pre>
+            <p><%= quiz["text"] %></p>
+            <% if quiz["sub_text"] != "" then %>
+                <pre><%= quiz["sub_text"] %></pre>
             <% end %>
-            <input name="quiz_id" type="hidden" value="<%=quiz.id%>" />
+            <input name="quiz_id" type="hidden" value="<%=quiz["id"] %>" />
             <input name="quiz_number" type="hidden" value="#<%=quiz_buttonid%>" />
-            <% if quiz.choose != nil then %>
+            <% if quiz["choose"] != nil then %>
                 <!-- 回答選択ボタン -->
-                <% lists = quiz.choose.split(',') %>
+                <% lists = quiz["choose"].split(',') %>
                 <% lists.each do |item| %>
                     <label class='answer_button'><%= item %></label>
                 <% end %>

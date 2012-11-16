@@ -2,13 +2,13 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-square = (x) -> x * x
-
 $(($)->
   #loading
   $( ".dialog-modal" ).dialog({
     modal: true,
     autoOpen: false,
+    height: 600,
+    width: 600,
     buttons: {
         "閉じる": (event) ->
             $(this).dialog("close");

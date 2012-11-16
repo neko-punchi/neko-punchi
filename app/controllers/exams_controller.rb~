@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+require 'pp'
 class ExamsController < ApplicationController
   # GET /exams
   # GET /exams.json
@@ -30,8 +31,23 @@ class ExamsController < ApplicationController
     #}
 
     #objlistには問題を詰め込む（DBから取得した値で）
-    @objlist << Relation.joins(:quiz, :category, :sub_category)
-    @objlist.map { |x| p x}
+    #@objlist << Relation.joins(:quiz, :category, :sub_category)
+    #@objlist.map { |x| p x}
+    #relations = Relation.find(:all, :conditions=>[ "category_id=?", 1])
+    ##Relation.find(:all, :conditions=>[ "category_id=?", 1])
+
+    items = Relation.find_by_sql(["select BB.sub_category, CC.* from relations AA inner join sub_categories BB on AA.sub_category_id = BB.id inner join quizzes CC on AA.quiz_id = CC.id",
+    :category => 1])
+
+    items.each {|item|
+         data = {}
+         data["quiz_id"] = item["id"]
+         data["sub_category"] = item["sub_category"]
+         data["text"] = item["text"]
+         data["sub_text"] = item["sub_text"]
+         data["choose"] = item["choose"]
+         @objlist << data
+    }
 
 
     #選択問題サンプル
@@ -52,7 +68,7 @@ class ExamsController < ApplicationController
       quiz.text = 'ファイルの末尾数行を表示するコマンドを答えなさい！'
       quiz.sub_text = 'hey, are you watching me?'
       
-      @objlist << quiz
+      #@objlist << quiz
     }
     #問題をランダムにシャッフル
     @objlist.shuffle!
