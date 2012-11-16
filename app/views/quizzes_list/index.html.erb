@@ -1,34 +1,22 @@
 <h1>問題一覧</h1>
-<table border="3">
-  <tbody>
-    <tr>
-      <th>カテゴリ</th>
-      <th>プルダウンテスト</th>
-      <th>サブカテゴリ</th>
-      <th>問題分</th>
-      <th>サブテキスト</th>
-      <th>選択肢</th>
-      <th>答え</th>
-      <th>登録</th>
-    </tr>
-      
-        <% @objlist.each do |relation| %>
-        <%= form_tag("/quizzes_list/mod") do %>
-        <%= hidden_field_tag 'quiz_id', relation.quiz.id %>
-         <tr>
-           <td><%= relation.category.category ? relation.category.category : "なし" %></td>
-           <td><%= select_tag "category_id", options_from_collection_for_select(Category.all, "id", "category") %></td>
-           
-           <td><%= relation.sub_category.sub_category ? relation.sub_category.sub_category : "なし" %></td>
-           <td><%= relation.quiz.text ? relation.quiz.text : "なし" %></td>
-           <td><%= relation.quiz.sub_text ? relation.quiz.sub_text : "なし" %></td>
-           <td><%= relation.quiz.choose ? relation.quiz.choose : "なし" %></td>
-           <td><%= relation.quiz.answer ? relation.quiz.answer : "なし" %></td>
-           <td><%= submit_tag "登録"  %></td>
-         </tr>
-        <% end %>
-        <% end %>
-      
-    </tr>
-  </tbody>
-</table>
+<div class="quizzes_list_table">
+  <div class="quizzes_list_c1">ID</div>
+  <div class="quizzes_list_c2">text</div>
+  <div class="quizzes_list_c2">sub_text</div>
+  <div class="quizzes_list_c2">choose</div>
+  <div class="quizzes_list_c1">answer</div>
+  <div class="quizzes_list_c1">hint</div>
+  <div class="quizzes_list_c1">変更ボタン</div>
+  <% @objlist.each do |quiz| %>
+    <%= form_tag("/quizzes_list/edit") do %>
+      <%= hidden_field_tag 'quiz_id', quiz.id %>
+      <div class="quizzes_list_c1"><%= quiz.id ? quiz.id : "なし" %></div>
+      <div class="quizzes_list_c2"><%= quiz.text ? quiz.text : "なし" %></div>
+      <div class="quizzes_list_c2"><%= quiz.sub_text ? quiz.sub_text : "なし" %></div>
+      <div class="quizzes_list_c2"><%= quiz.choose ? quiz.choose : "なし" %></div>
+      <div class="quizzes_list_c1"><%= quiz.answer ? quiz.answer : "なし" %></div>
+      <div class="quizzes_list_c1"><%= quiz.answer ? quiz.hint : "なし" %></div>
+      <div class="quizzes_list_c1"><%= submit_tag "変更"  %></div>
+    <% end %>
+  <% end %>
+</div>
