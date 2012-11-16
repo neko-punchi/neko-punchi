@@ -1,3 +1,82 @@
 // Place all the styles related to the quizzes_list controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+div#wrapper {  
+  width: 1000px;  
+  margin: 10px auto;  
+  background-color: #fff;  
+}  
+.quizzes_list_table {margin:0 auto;
+width:79em;
+text-align:ceter;}
+
+.quizzes_list_table br{clear:both;}
+
+.quiz_table {margin:0 auto;
+width:112em;
+text-align:ceter;}
+
+div.quizzes_list_c1{display:block;
+float:left;
+margin:0 0 1px 1px;
+padding:4px;
+width:3em;
+height:4em;
+border:1px solid #666;
+}
+div.quizzes_list_c2{display:block;
+float:left;
+margin:0 0 1px 1px;
+padding:4px;
+width:20em;
+height:4em;
+border:1px solid #666;
+}
+div.quizzes_list_c3{display:block;
+float:left;
+margin:0 0 1px 1px;
+padding:4px;
+width:10em;
+height:4em;
+border:1px solid #666;
+}
+div.quizzes_list_c4{display:block;
+float:left;
+margin:0 0 1px 1px;
+padding:4px;
+width:20em;
+height:4em;
+border:1px solid #666;
+}
+div.quizzes_list_c5{display:block;
+float:left;
+margin:0 0 1px 1px;
+padding:4px;
+width:20em;
+height:4em;
+border:1px solid #666;
+}
+div.quizzes_list_c6{display:block;
+float:left;
+margin:0 0 1px 1px;
+padding:4px;
+width:10em;
+height:4em;
+border:1px solid #666;
+}
+div.quizzes_list_c7{display:block;
+float:left;
+margin:0 0 1px 1px;
+padding:4px;
+width:10em;
+height:4em;
+border:1px solid #666;
+}
+div.quizzes_list_c8{display:block;
+float:left;
+margin:0 0 1px 1px;
+padding:4px;
+width:10em;
+height:4em;
+border:1px solid #666;
+}

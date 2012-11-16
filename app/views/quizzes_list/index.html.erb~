@@ -1,34 +1,24 @@
 <h1>問題一覧</h1>
-<table border="3">
-  <tbody>
-    <tr>
-      <th>カテゴリ</th>
-      <th>プルダウンテスト</th>
-      <th>サブカテゴリ</th>
-      <th>問題分</th>
-      <th>サブテキスト</th>
-      <th>選択肢</th>
-      <th>答え</th>
-      <th>登録</th>
-    </tr>
-      
-        <% @objlist.each do |relation| %>
-        <%= form_tag("/quizzes_list/mod") do %>
-        <%= hidden_field_tag 'quiz_id', relation.quiz.id %>
-         <tr>
-           <td><%= relation.category.category ? relation.category.category : "なし" %></td>
-           <td><%= select_tag "category_id", options_from_collection_for_select(Category.all, "id", "category") ,{:include_blank=>true} %></td>
-           
-           <td><%= relation.sub_category.sub_category ? relation.sub_category.sub_category : "なし" %></td>
-           <td><%= relation.quiz.text ? relation.quiz.text : "なし" %></td>
-           <td><%= relation.quiz.sub_text ? relation.quiz.sub_text : "なし" %></td>
-           <td><%= relation.quiz.choose ? relation.quiz.choose : "なし" %></td>
-           <td><%= relation.quiz.answer ? relation.quiz.answer : "なし" %></td>
-           <td><%= submit_tag "登録"  %></td>
-         </tr>
-        <% end %>
-        <% end %>
-      
-    </tr>
-  </tbody>
-</table>
+<div class="quizzes_list_table">
+  <div class="quizzes_list_c1">現在のカテゴリ</div>
+  <div class="quizzes_list_c2">カテゴリ選択</div>
+  <div class="quizzes_list_c3">サブカテゴリ</div>
+  <div class="quizzes_list_c4">問題分</div>
+  <div class="quizzes_list_c5">サブテキスト</div>
+  <div class="quizzes_list_c6">選択肢</div>
+  <div class="quizzes_list_c7">答え</div>
+  <div class="quizzes_list_c8">登録</div>
+  <% @objlist.each do |relation| %>
+    <%= form_tag("/quizzes_list/mod") do %>
+      <%= hidden_field_tag 'quiz_id', relation.quiz.id %>
+      <div class="quizzes_list_c1"><%= relation.category.category ? relation.category.category : "なし" %></div>
+      <div class="quizzes_list_c2"><%= select_tag "category_id", options_from_collection_for_select(Category.all, "id", "category") %></div>
+      <div class="quizzes_list_c3"><%= relation.sub_category.sub_category ? relation.sub_category.sub_category : "なし" %></div>
+      <div class="quizzes_list_c4"><%= relation.quiz.text ? relation.quiz.text : "なし" %></div>
+      <div class="quizzes_list_c5"><%= relation.quiz.sub_text ? relation.quiz.sub_text : "なし" %></div>
+      <div class="quizzes_list_c6"><%= relation.quiz.choose ? relation.quiz.choose : "なし" %></div>
+      <div class="quizzes_list_c7"><%= relation.quiz.answer ? relation.quiz.answer : "なし" %></div>
+      <div class="quizzes_list_c8"><%= submit_tag "登録"  %></div>
+    <% end %>
+  <% end %>
+</div>
