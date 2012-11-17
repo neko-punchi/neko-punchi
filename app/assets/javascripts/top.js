@@ -1,4 +1,3 @@
-$(function(){
-	$('li:contains("news")').css('color','red');
-})
-
+ $(function() {
+   $( "#category-menu" ).menu();
+});

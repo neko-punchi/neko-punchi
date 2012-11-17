@@ -6,16 +6,27 @@
     <div id="news">
     <ul>
       <li>今週のベスト3</li>
-      <li>news<li>
+      <li>news</li>
     </ul>
   　</div>
-    <li><%= link_to "テスト開始する", :controller => "exams", :action => "index" %></li>
+    <ul id="category-menu">
+      <li><a href="#">list</a>
+        <ul>
+          <li ><a href="#">oracle</a></li>
+          <li>lpic2</li>
+          <li><%= link_to "lpic1", :controller => "exams", :action => "index" %></li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul>
     <% if current_user %>
       <li><%= link_to "あなたの成績" ,logout_path %></li>
     <% else %>
       <li>あなたの成績（ログインしないと表示できません）</li>
     <% end %>
     <li>管理画面</li>
+    </ul>
 
   </ul>
 </div>
