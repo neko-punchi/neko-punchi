@@ -41,6 +41,7 @@ div.panel {
   border-color: #ccffff;
   margin: 5px;
   width: 120px;
+  height: 160px;
   padding: 5px;
   border-radius: 5px;
   background: -moz-linear-gradient(top, #ccffff, #ffffff);　/* Firefox用 */  
