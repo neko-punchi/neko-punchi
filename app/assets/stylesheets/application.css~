@@ -4,6 +4,7 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
  *= require vendor
+ *= require jqplot
  *= require_tree . 
 */
 body {  
@@ -37,7 +38,7 @@ div#contents {
 div.panel {
   border-style: groove;
   border-width: 1px;
-  border-color:#888;
+  border-color: #ccffff;
   margin: 5px;  
   padding: 5px;
   border-radius: 5px;
