@@ -39,7 +39,8 @@ div.panel {
   border-style: groove;
   border-width: 1px;
   border-color: #ccffff;
-  margin: 5px;  
+  margin: 5px;
+  width: 120px;
   padding: 5px;
   border-radius: 5px;
   background: -moz-linear-gradient(top, #ccffff, #ffffff);　/* Firefox用 */  

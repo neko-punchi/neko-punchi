@@ -15,8 +15,7 @@ class ExamsController < ApplicationController
   # GET /exams.json
   def index
 
-    items = Relation.find_by_sql(["select BB.sub_category, CC.* from relations AA inner join sub_categories BB on AA.sub_category_id = BB.id inner join quizzes CC on AA.quiz_id = CC.id",
-    :category => 1])
+    items = Relation.find_by_sql(["select BB.sub_category, CC.* from relations AA inner join sub_categories BB on AA.sub_category_id = BB.id inner join quizzes CC on AA.quiz_id = CC.id where AA.category_id = 1"])
 
     @objlist = []
 
@@ -56,7 +55,10 @@ class ExamsController < ApplicationController
          printf("quiz_id=%d, rate=%d\n", quiz_id, data["rate"])
          @objlist << data
     }
-
+    
+    @objlist.each {|x|
+        puts x["id"]
+    }
 
     #問題をランダムにシャッフル
     @objlist.shuffle!
