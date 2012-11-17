@@ -1,11 +1,11 @@
 // Place all the styles related to the quizzes_list controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-//div#wrapper {  
-//  width: 1000px;  
-//  margin: 10px auto;  
-//  background-color: #fff;  
-//}  
+div#wrapper {  
+  width: 1000px;  
+  margin: 10px auto;  
+  background-color: #fff;  
+}  
 .quizzes_list_table {margin:0 auto;
 width:79em;
 text-align:ceter;}

@@ -1,0 +1,26 @@
+<h1>問題一覧</h1>
+<div class="quiz_table">
+  <div class="quizzes_list_c1">ID</div>
+  <div class="quizzes_list_c3">category</div>
+  <div class="quizzes_list_c2">sub_category</div>
+  <div class="quizzes_list_c2">text</div>
+  <div class="quizzes_list_c2">sub_text</div>
+  <div class="quizzes_list_c2">choose</div>
+  <div class="quizzes_list_c1">answer</div>
+  <div class="quizzes_list_c1">hint</div>
+  <div class="quizzes_list_c1">変更ボタン</div>
+  <% @quiz_data.each do |quiz| %>
+    <%= form_tag("/quizzes_list/change") do %>
+      <%= hidden_field_tag 'quiz_id', quiz.id %>
+      <div class="quizzes_list_c1"><%= text_field_tag :quiz_id, quiz.id %></div>
+      <div class="quizzes_list_c3"><%= select_tag :quiz_category, options_from_collection_for_select(Category.all, "id", "category") %></div>
+      <div class="quizzes_list_c2"><%= select_tag :quiz_sub_category, options_from_collection_for_select(SubCategory.all, "id", "sub_category") %></div>
+      <div class="quizzes_list_c2"><%= text_field_tag :quiz_text, quiz.text %></div>
+      <div class="quizzes_list_c2"><%= text_field_tag :quiz_sub_text, quiz.sub_text %></div>
+      <div class="quizzes_list_c2"><%= text_field_tag :quiz_choose, quiz.choose %></div>
+      <div class="quizzes_list_c1"><%= text_field_tag :quiz_answer, quiz.answer %></div>
+      <div class="quizzes_list_c1"><%= text_field_tag :quiz_answer, quiz.hint %></div>
+      <div class="quizzes_list_c1"><%= submit_tag "変更"  %></div>
+    <% end %>
+  <% end %>
+</div>
