@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121014082627) do
+ActiveRecord::Schema.define(:version => 20121117014236) do
 
   create_table "categories", :force => true do |t|
     t.string   "category",   :limit => 80, :null => false
@@ -47,6 +47,14 @@ ActiveRecord::Schema.define(:version => 20121014082627) do
   add_index "relations", ["category_id"], :name => "index_relations_on_category_id"
   add_index "relations", ["quiz_id"], :name => "index_relations_on_quiz_id"
   add_index "relations", ["sub_category_id"], :name => "index_relations_on_sub_category_id"
+
+  create_table "results", :force => true do |t|
+    t.integer  "quiz_id"
+    t.integer  "correct"
+    t.integer  "wrong"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sub_categories", :force => true do |t|
     t.integer  "category_id"
