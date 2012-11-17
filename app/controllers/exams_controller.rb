@@ -1,6 +1,16 @@
 # -*- coding: utf-8 -*-
 require 'pp'
 class ExamsController < ApplicationController
+
+  GANBARE =["とても残念だよ、君なら解けると思ったんだが・・・　不正解だ",
+            "あえて言うまでも無いが、、、不正解だ",
+            "いやぁ、おしいおしい、後もう少しだよ。不正解だけど（＾▽＾）",
+            "不正解だけど気にしないで。駄目な子は君だけじゃないから。"]
+
+  YOKUDEKIMASHITA =["正解だよ！　もう君に教えることは無いよ",
+                    "ボウヤ、やればできるじゃない正解よ。ご褒美ほしい？",
+                    "正解だ。これに慢心せずに精進することだな。",
+                    "べ、、別にあなただから正解にしたんじゃないんだからね"]
   # GET /exams
   # GET /exams.json
   def index
@@ -54,8 +64,9 @@ class ExamsController < ApplicationController
 
 
   def answer
-    _message = "とても残念だよ、君なら解けると思ったんだが・・・　不正解だ"
-    _status = "incorrect"
+    #_message = "とても残念だよ、君なら解けると思ったんだが・・・　不正解だ"
+    _message = GANBARE[rand(GANBARE.length)] 
+    _status = false
 
     quiz_id = params[:quiz_id]
     answer = params[:answer]
@@ -70,21 +81,24 @@ class ExamsController < ApplicationController
         result.wrong = 0
     end
 
+    
     if quiz.answer == answer.strip then
-      _message = "よくできたね！正解だよ。"
-      _status = "correct"
+      #_message = "よくできたね！正解だよ。"
+      _message = YOKUDEKIMASHITA[rand(YOKUDEKIMASHITA.length)] 
+      _status = true
       result.correct += 1
     else
       result.wrong += 1
     end
 
-    printf("user=[%s], answer=[%s]\n",quiz.answer, answer.strip)
-    puts "correct:" + result.correct.to_s
-    puts "wrong:" + result.wrong.to_s
+    #printf("user=[%s], answer=[%s]\n",quiz.answer, answer.strip)
+    #puts "correct:" + result.correct.to_s
+    #puts "wrong:" + result.wrong.to_s
+    _value = sprintf("正解は... [ %s ] です。", quiz.answer)
 
     result.save
 
-    render json: {status: _status, msg: _message}
+    render json: {isCorrect: _status, msg: _message, value: _value}
 
   end
 end

@@ -29,4 +29,4 @@
     <li><%= link_to "問題メンテナンス", :controller => "quizzes_list", :action => "index" %></li>
   </ul>
 </div>
-
+<div style=" clear: both;"/>
