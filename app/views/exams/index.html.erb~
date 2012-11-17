@@ -42,6 +42,7 @@
                 <label class='submit_button'>回答する</label>
             <% end %>
             <p name="message"></p>
+            <p name="correct_answer"></p>
         <% end %>
       </div><!--End of div class(dialog-model) -->
     </div><!-- End of div class(exam_box) -->
