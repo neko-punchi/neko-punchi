@@ -17,7 +17,7 @@ class StatsController < ApplicationController
 
   	respond_to do |format|
   		format.html
-  		format.json{render json: @your_answer_rates}
+  		#format.json{render json: @your_answer_rates}
   	end
   end
 

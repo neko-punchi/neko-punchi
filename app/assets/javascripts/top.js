@@ -1,3 +1,3 @@
- $(function() {
-   $( "#category-menu" ).menu();
-});
+  $(function() {
+    $('#exam-menu').droppy();
+  });

@@ -8,4 +8,5 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require jqplot
+//= require vendor
 //= require_tree .

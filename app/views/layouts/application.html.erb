@@ -12,15 +12,6 @@
     <div id="contents">
       <%= yield %>
     </div>
-    <div id="user_nav">
-      <% if current_user %>
-          <%= current_user.name %>さん <%= link_to "ログアウト" ,logout_path %>
-      <% else %>
-          <%= link_to "Twitterでlogin","/auth/twitter" %>
-          <%= link_to "facebookでlogin", "/auth/facebook" %>
-          <%= link_to "googleでlogin", "/auth/google_oauth2" %>
-      <% end %>
-    </div>
 
     <%= render 'layouts/footer' %>
   </div>
