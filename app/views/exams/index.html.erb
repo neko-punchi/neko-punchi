@@ -16,7 +16,7 @@
       <!-- 問題ボタン -->
       <div class="panel">
       <label id="<%= quiz_buttonid %>" class='exam_button' value="<%= quiz_number %>"><%= title %></label>
-        <p><%= quiz["sub_category"] %></p>
+        <p style="font-size: x-small"><%= quiz["sub_category"] %></p>
         <p>正解率:<%= quiz["rate"] %>％</p>
       </div>
 
@@ -42,6 +42,7 @@
                 <label class='submit_button'>回答する</label>
             <% end %>
             <p name="message"></p>
+            <p name="correct_answer"></p>
         <% end %>
       </div><!--End of div class(dialog-model) -->
     </div><!-- End of div class(exam_box) -->

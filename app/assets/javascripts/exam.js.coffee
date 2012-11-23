@@ -45,10 +45,14 @@ $(($)->
         type: "POST",
         data: request
         success: (data)->
-            #alert(data.msg)
-            line = form.children("p[name=message]")
-            line.text(data.msg)
-            #alert(line.text())
+            if data.isCorrect
+                line = form.children("p[name=message]")
+                line.text(data.msg)
+            else
+                line = form.children("p[name=message]")
+                line.text(data.msg)
+                line2 = form.children("p[name=correct_answer]")
+                line2.text(data.value)
 
         error: (xhr, status, err)->
             alert("error")
@@ -79,8 +83,14 @@ $(($)->
         data: request
         success: (data)->
             #alert(data.msg)
-            line = form.children("p[name=message]")
-            line.text(data.msg)
+            if data.isCorrect
+                line = form.children("p[name=message]")
+                line.text(data.msg)
+            else
+                line = form.children("p[name=message]")
+                line.text(data.msg)
+                line2 = form.children("p[name=correct_answer]")
+                line2.text(data.value)
             #alert(line.text())
 
         error: (xhr, status, err)->
