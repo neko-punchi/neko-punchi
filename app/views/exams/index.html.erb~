@@ -4,6 +4,7 @@
   <h1>試験</h1>
 
   <!-- 問題一覧 -->
+  <%=link_to_function 'Press to Listen' do |page|   Sound.play "b_se1.wav" end %>
   <% number = 0 %>
   <% @objlist.each do |quiz| %>
     <% number += 1 %>
@@ -16,7 +17,7 @@
       <!-- 問題ボタン -->
       <div class="panel">
       <label id="<%= quiz_buttonid %>" class='exam_button' value="<%= quiz_number %>"><%= title %></label>
-        <p><%= quiz["sub_category"] %></p>
+        <p style="font-size: x-small"><%= quiz["sub_category"] %></p>
         <p>正解率:<%= quiz["rate"] %>％</p>
       </div>
 

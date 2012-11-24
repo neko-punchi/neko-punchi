@@ -23,7 +23,7 @@ SubCategory.create(:id => '10' ,:sub_category => 'セキュリティ')
 Relation.create(
   :id => '1' ,
   :quiz_id => '1',
-  :sub_category_id => '1',
+  :sub_category_id => '3',
   :category_id => '1'
   )
 Quiz.create(:id => '1' ,
@@ -122,6 +122,7 @@ Quiz.create(
   :text => 'シェルのコマンド履歴で、直前のコマンド実行の最初の引数を指示するものとして正しいものを選びなさい。',
   :choose => '!!,!*,!^,!$',
   :answer => '!^')
+#----------------------------------------------------------------------
 
 Relation.create(
   :id => '8',
@@ -151,11 +152,12 @@ Quiz.create(
   :choose => 'expand,fmt,tr,unexpand',
   :answer => 'expand')
 
+
 #----------------------------------------------------------------------
 Relation.create(
   :id => '10',
   :quiz_id => '10',
-  :sub_category_id => '2',
+  :sub_category_id => '1',
   :category_id => '1')
 Quiz.create(
   :id => '10',
@@ -208,7 +210,7 @@ Quiz.create(
 Relation.create(
   :id => '13',
   :quiz_id => '13',
-  :sub_category_id => '1',
+  :sub_category_id => '4',
   :category_id => '1')
 Quiz.create(
   :id => '13',
@@ -221,7 +223,7 @@ Quiz.create(
 Relation.create(
   :id => '14',
   :quiz_id => '14',
-  :sub_category_id => '3',
+  :sub_category_id => '1',
   :category_id => '1')
 Quiz.create(
   :id => '14',
@@ -257,7 +259,7 @@ Quiz.create(
 Relation.create(
   :id => '16',
   :quiz_id => '16',
-  :sub_category_id => '1',
+  :sub_category_id => '4',
   :category_id => '1')
 Quiz.create(
   :id => '16',
@@ -275,7 +277,7 @@ Quiz.create(
 Relation.create(
   :id => '17',
   :quiz_id => '17',
-  :sub_category_id => '1',
+  :sub_category_id => '4',
   :category_id => '1')
 Quiz.create(
   :id => '17',
@@ -293,7 +295,7 @@ Quiz.create(
 Relation.create(
   :id => '18',
   :quiz_id => '18',
-  :sub_category_id => '1',
+  :sub_category_id => '4',
   :category_id => '1')
 Quiz.create(
   :id => '18',
@@ -322,7 +324,7 @@ Quiz.create(
 Relation.create(
   :id => '20',
   :quiz_id => '20',
-  :sub_category_id => '1',
+  :sub_category_id => '4',
   :category_id => '1')
 Quiz.create(
   :id => '20',

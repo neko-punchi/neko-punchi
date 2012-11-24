@@ -7,17 +7,17 @@
 Category.create(:id => '1' ,:category => 'LPICレベル1 101試験')
 Category.create(:id => '2' ,:category => 'LPICレベル1 102試験')
 
-SubCategory.create(:id => '1' ,:sub_category => 'システムアーキテクチャ')
-SubCategory.create(:id => '2' ,:sub_category => 'Linuxのインストールとパッケージ管理')
-SubCategory.create(:id => '3' ,:sub_category => 'GNUとUnixのコマンド')
-SubCategory.create(:id => '4' ,:sub_category => 'デバイス、Linuxファイルシステム-階層標準')
+SubCategory.create(:id => '1' ,:category_id => '1', :sub_category => 'システムアーキテクチャ')
+SubCategory.create(:id => '2' ,:category_id => '1', :sub_category => 'Linuxのインストールとパッケージ管理')
+SubCategory.create(:id => '3' ,:category_id => '1', :sub_category => 'GNUとUnixのコマンド')
+SubCategory.create(:id => '4' ,:category_id => '1', :sub_category => 'デバイス、Linuxファイルシステム-階層標準')
 
-SubCategory.create(:id => '5' ,:sub_category => 'シェル、スクリプト、およびデータ管理')
-SubCategory.create(:id => '6' ,:sub_category => 'ユーザインターフェイスとデスクトップ')
-SubCategory.create(:id => '7' ,:sub_category => '管理業務')
-SubCategory.create(:id => '8' ,:sub_category => '重要なシステムサービス')
-SubCategory.create(:id => '9' ,:sub_category => 'ネットワークの基礎')
-SubCategory.create(:id => '10' ,:sub_category => 'セキュリティ')
+SubCategory.create(:id => '5' ,:category_id => '2', :sub_category => 'シェル、スクリプト、およびデータ管理')
+SubCategory.create(:id => '6' ,:category_id => '2', :sub_category => 'ユーザインターフェイスとデスクトップ')
+SubCategory.create(:id => '7' ,:category_id => '2', :sub_category => '管理業務')
+SubCategory.create(:id => '8' ,:category_id => '2', :sub_category => '重要なシステムサービス')
+SubCategory.create(:id => '9' ,:category_id => '2', :sub_category => 'ネットワークの基礎')
+SubCategory.create(:id => '10',:category_id => '2', :sub_category => 'セキュリティ')
 
 #----------------------------------------------------------------------
 Relation.create(
