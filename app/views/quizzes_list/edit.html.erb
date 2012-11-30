@@ -4,7 +4,7 @@
       <%= hidden_field_tag 'quiz_id', quiz.id %>
         <div class="quiz_edit_table">
         <div class="quiz_edit_t1">ID</div>
-        <div class="quiz_edit_c1"><%= text_field_tag :quiz_id, quiz.id %></div><br>
+        <div class="quiz_edit_c1"><%= quiz.id %></div><br>
         <div class="quiz_edit_t1">category</div>
         <div class="quiz_edit_c1"><%= select_tag :category, options_from_collection_for_select(Category.all, "id", "category") %></div><br>
         <div class="quiz_edit_t1">sub_category</div>
