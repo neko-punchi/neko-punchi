@@ -1,82 +1,127 @@
 // Place all the styles related to the quizzes_list controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-div#wrapper {  
-  width: 1000px;  
-  margin: 10px auto;  
-  background-color: #fff;  
-}  
+//div#wrapper {  
+//  width: 1000px;  
+//  margin: 10px auto;  
+//  background-color: #fff;  
+//}  
 .quizzes_list_table {margin:0 auto;
-width:79em;
-text-align:ceter;}
+width:32em;
+text-align:ceter;
+position: relative; top: 0; right:150px;}
 
 .quizzes_list_table br{clear:both;}
 
-.quiz_table {margin:0 auto;
-width:112em;
-text-align:ceter;}
 
+
+div.quizzes_list_t1{display:block;
+float:left;
+margin:0 0 1px 1px;
+padding:4px;
+width:3em;
+height:3em;
+border:1px solid #666;
+}
+div.quizzes_list_t2{display:block;
+float:left;
+margin:0 0 1px 1px;
+padding:4px;
+width:20em;
+height:3em;
+border:1px solid #666;
+}
+div.quizzes_list_t3{display:block;
+float:left;
+margin:0 0 1px 1px;
+padding:4px;
+width:5em;
+height:3em;
+border:1px solid #666;
+}
+div.quizzes_list_t_subtext{display:block;
+float:left;
+margin:0 0 1px 1px;
+padding:4px;
+width:25em;
+height:3em;
+border:1px solid #666;
+}
 div.quizzes_list_c1{display:block;
 float:left;
 margin:0 0 1px 1px;
 padding:4px;
 width:3em;
-height:4em;
+height:6em;
 border:1px solid #666;
+overflow:auto
+
 }
 div.quizzes_list_c2{display:block;
 float:left;
 margin:0 0 1px 1px;
 padding:4px;
 width:20em;
-height:4em;
+height:6em;
 border:1px solid #666;
+overflow:auto
 }
 div.quizzes_list_c3{display:block;
 float:left;
 margin:0 0 1px 1px;
 padding:4px;
-width:10em;
-height:4em;
+width:5em;
+height:6em;
 border:1px solid #666;
+overflow:auto
 }
-div.quizzes_list_c4{display:block;
+div.quizzes_list_subtext{display:block;
 float:left;
 margin:0 0 1px 1px;
 padding:4px;
-width:20em;
-height:4em;
+width:25em;
+height:6em;
 border:1px solid #666;
+overflow:auto
 }
-div.quizzes_list_c5{display:block;
+.quiz_edit_table {margin:0 auto;
+width:50em;
+text-align:ceter;
+}
+.quiz_edit_table br{clear:both;}
+div.quiz_edit_t1{display:block;
 float:left;
 margin:0 0 1px 1px;
 padding:4px;
-width:20em;
+width:8em;
 height:4em;
 border:1px solid #666;
 }
-div.quizzes_list_c6{display:block;
+div.quiz_edit_c1{display:block;
 float:left;
 margin:0 0 1px 1px;
 padding:4px;
-width:10em;
+width:40em;
 height:4em;
 border:1px solid #666;
 }
-div.quizzes_list_c7{display:block;
+div.quiz_edit_t2{display:block;
 float:left;
 margin:0 0 1px 1px;
 padding:4px;
-width:10em;
-height:4em;
+width:8em;
+height:6em;
 border:1px solid #666;
 }
-div.quizzes_list_c8{display:block;
+div.quiz_edit_c2{display:block;
 float:left;
 margin:0 0 1px 1px;
 padding:4px;
-width:10em;
-height:4em;
+width:40em;
+height:6em;
 border:1px solid #666;
+}
+div.quiz_edit_submit{
+text-align:center;
+margin: 0 auto;
 }
