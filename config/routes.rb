@@ -25,6 +25,7 @@ ElearnNekoPunchi::Application.routes.draw do
   match 'exams/prev' , :to => 'exams#prev', :via => 'get'
   match 'quizzes_list' , :to => 'quizzes_list#index'
   match 'quizzes_list/edit' , :to => 'quizzes_list#edit'
+  match 'quizzes_list/update' , :to => 'quizzes_list#update'
 
   match 'stats/statistics' , :to => 'stats#statistics'
   match 'stats/your_records' , :to => 'stats#your_records'
