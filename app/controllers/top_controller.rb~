@@ -21,10 +21,10 @@ class TopController < ApplicationController
     puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
     puts "[#{file}]"
     puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-    f = open(file)
-    f.each_line{ |line|
-      puts line
-    }
+    #f = open(file)
+    #f.each_line{ |line|
+    #  puts line
+    #}
   end
 
 end
