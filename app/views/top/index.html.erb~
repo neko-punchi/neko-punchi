@@ -1,32 +1,69 @@
+<div class='contents-part' >
+      <%= raw @news_html %>
+</div>
 
-<div id='exam-contents'>
-
-  <ul>
-    <li>更新情報</li>
-    <div id="news">
+<div class='contents-part'>
+  <div>
+  <!-- <div class="topmenu-contents" id="exam-div"> --> 
     <ul>
-      <li>今週のベスト3</li>
-      <li>news</li>
-    </ul>
-  　</div>
-    <ul id="category-menu">
-      <li><a href="#">list</a>
+      <li><a href="#">更新情報</a>
         <ul>
-          <li ><a href="#">oracle</a></li>
-          <li>lpic2</li>
+          <li><a href="#">今週のベスト3</a></li>
+          <li><a href="#">news</a></li>
+        </ul>
+      </li>
+      <li><a href="#">試験する</a>
+        <ul>
+          <li><a href="#">oracle</a></li>
+          <li><a href="#">lpic2</a></li>
           <li><%= link_to "lpic1", :controller => "exams", :action => "index" %></li>
         </ul>
       </li>
     </ul>
-
-    <ul>
-    <% if current_user %>
-      <li><%= link_to "あなたの成績" ,logout_path %></li>
-    <% else %>
-      <li>あなたの成績（ログインしないと表示できません）</li>
-    <% end %>
-    <li>管理画面</li>
-    <li><%= link_to "問題メンテナンス", :controller => "quizzes_list", :action => "index" %></li>
-  </ul>
+   </div>
 </div>
+
+
 <div style=" clear: both;"/>
+
+<div>
+  <!-- メニューバー(exam-menu) -->
+  <ul id='exam-menu'>
+    <% if current_user %>
+      <li><%= link_to "あなたの成績" ,stats_your_records_path %>
+    <% else %>
+      <li><a href="#">あなたの成績</a>
+    <% end %>
+    </li>
+    <li><a href="#">管理画面</a>
+      <ul>
+        <li><%= link_to "問題メンテナンス", :controller => "quizzes_list", :action => "index" %></li>
+      </ul>
+    </li>
+
+      
+    <% if current_user %>
+        <li><a href="#"><%= current_user.name %>ログイン中</a> 
+          <ul>
+            <li><%= link_to "ログアウト" ,logout_path %></li>
+          </ul>
+        </li>
+    <% else %>
+        <li><a href="#">ログイン</a>
+          <ul>
+            <li><%= link_to "Twitterでlogin","/auth/twitter" %></li>
+            <li><%= link_to "facebookでlogin", "/auth/facebook" %></li>
+            <li><%= link_to "googleでlogin", "/auth/google_oauth2" %></li>
+          </ul>
+        </li>
+    <% end %>
+   </ul>
+<div>
+<!--
+<h3>session</h3>
+<h4><%= debug(session) %></h4>
+<h3>current_user</h3>
+<h4><%= debug(current_user) %></h4>
+-->
+</div>
+

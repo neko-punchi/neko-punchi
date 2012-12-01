@@ -1,5 +1,10 @@
-<div id='top-menu'>    
-  <div class="topmenu-contents" id="exam-div"> 
+<div class='contents-part' >
+      <%= raw @news_html %>
+</div>
+
+<div class='contents-part'>
+  <div>
+  <!-- <div class="topmenu-contents" id="exam-div"> --> 
     <ul>
       <li><a href="#">更新情報</a>
         <ul>
@@ -16,8 +21,14 @@
       </li>
     </ul>
    </div>
- 
-  <ul id='exam-menu'>
+</div>
+
+
+<div style=" clear: both;"/>
+
+<div>
+  <!-- メニューバー(exam-menu) -->
+  <ul id='droppy-menu'>
     <% if current_user %>
       <li><%= link_to "あなたの成績" ,stats_your_records_path %>
     <% else %>
@@ -47,7 +58,7 @@
         </li>
     <% end %>
    </ul>
-<div style=" clear: both;"/>
+<div>
 <!--
 <h3>session</h3>
 <h4><%= debug(session) %></h4>

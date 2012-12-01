@@ -1,3 +1,3 @@
   $(function() {
-    $('#exam-menu').droppy();
+    $('#droppy-menu').droppy();
   });

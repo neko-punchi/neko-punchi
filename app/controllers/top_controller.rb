@@ -1,30 +1,19 @@
 # -*- coding: utf-8 -*-
-require "open-uri"
 class TopController < ApplicationController
-=begin
-	@relations = Relation.all
-
-
-	respond_to do |format|
-      format.html
-      format.json { render json: @relations }
-    end
-=end
   def index
-     readWiki
+     @news_html = readWiki()
   end
 
 #read local news text with wiki format
   def readWiki
-    file = File.expand_path('public/robots.txt', ENV['RAILS_ROOT'])
-    puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-    puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-    puts "[#{file}]"
-    puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+    file = File.expand_path('public/news/news.wiki', ENV['RAILS_ROOT'])
+
     f = open(file)
-    f.each_line{ |line|
-      puts line
-    }
+    wiki = f.read
+    f.close
+    html = Redcarpet::Render::HTML.new(:hard_wrap => true )
+
+    return Redcarpet::Markdown.new(html,:autolink => true).render(wiki)
   end
 
 end
