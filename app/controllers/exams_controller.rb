@@ -83,15 +83,37 @@ class ExamsController < ApplicationController
         result.wrong = 0
     end
 
-    
+     #ログインしている場合、サブカテゴリ毎個人成績DBからレコードを探す
+    if current_user then
+      relation = Relation.find_by_quiz_id(quiz_id)
+      personal_result = PersonalResult.find_by_provider_and_uid_and_category_id_and_sub_category_id(
+        current_user.provider,current_user.uid,relation.category_id,relation.sub_category_id)
+      unless personal_result then
+        personal_result = PersonalResult.new
+        personal_result.provider = current_user.provider
+        personal_result.uid = current_user.uid
+        personal_result.category_id = relation.category_id
+        personal_result.sub_category_id = relation.sub_category_id
+        personal_result.correct = 0
+        personal_result.wrong = 0
+      end
+    end
+   
     if quiz.answer == answer.strip then
       #_message = "よくできたね！正解だよ。"
       _message = YOKUDEKIMASHITA[rand(YOKUDEKIMASHITA.length)] 
       _status = true
       result.correct += 1
+      if current_user then personal_result.correct += 1 end
     else
       result.wrong += 1
+      if current_user then personal_result.wrong += 1 end
     end
+
+
+
+
+
 
     #printf("user=[%s], answer=[%s]\n",quiz.answer, answer.strip)
     #puts "correct:" + result.correct.to_s
@@ -99,6 +121,7 @@ class ExamsController < ApplicationController
     _value = sprintf("正解は... [ %s ] です。", quiz.answer)
 
     result.save
+    if current_user then personal_result.save end
 
     render json: {isCorrect: _status, msg: _message, value: _value}
 

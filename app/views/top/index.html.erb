@@ -1,6 +1,6 @@
 <div id='top-menu'>    
   <div class="topmenu-contents" id="exam-div"> 
-    <ul id='exam-menu'>
+    <ul>
       <li><a href="#">更新情報</a>
         <ul>
           <li><a href="#">今週のベスト3</a></li>
@@ -10,42 +10,49 @@
       <li><a href="#">試験する</a>
         <ul>
           <li><a href="#">oracle</a></li>
-          <li><a href="#">lpic2</a>
+          <li><a href="#">lpic2</a></li>
           <li><%= link_to "lpic1", :controller => "exams", :action => "index" %></li>
         </ul>
       </li>
-      <% if current_user %>
-        <li><%= link_to "あなたの成績" ,stats_your_records_path %>
-      <% else %>
-        <li><a href="#">あなたの成績</a>
-      <% end %>
-      </li>
-      <li><a href="#">管理画面</a>
-        <ul>
-          <li><%= link_to "問題メンテナンス", :controller => "quizzes_list", :action => "index" %></li>
-        </ul>
-      </li>
+    </ul>
+   </div>
  
+  <ul id='exam-menu'>
+    <% if current_user %>
+      <li><%= link_to "あなたの成績" ,stats_your_records_path %>
+    <% else %>
+      <li><a href="#">あなたの成績</a>
+    <% end %>
+    </li>
+    <li><a href="#">管理画面</a>
+      <ul>
+        <li><%= link_to "問題メンテナンス", :controller => "quizzes_list", :action => "index" %></li>
+      </ul>
+    </li>
+
       
-      <% if current_user %>
-          <li><a href="#"><%= current_user.name %>ログイン中</a> 
-            <ul>
-              <li><%= link_to "ログアウト" ,logout_path %></li>
-            </ul>
-          </li>
-      <% else %>
-          <li><a href="#">ログイン</a>
-            <ul>
-              <li><%= link_to "Twitterでlogin","/auth/twitter" %></li>
-              <li><%= link_to "facebookでlogin", "/auth/facebook" %></li>
-              <li><%= link_to "googleでlogin", "/auth/google_oauth2" %></li>
-            </ul>
-          </li>
-      <% end %>
-
+    <% if current_user %>
+        <li><a href="#"><%= current_user.name %>ログイン中</a> 
+          <ul>
+            <li><%= link_to "ログアウト" ,logout_path %></li>
+          </ul>
+        </li>
+    <% else %>
+        <li><a href="#">ログイン</a>
+          <ul>
+            <li><%= link_to "Twitterでlogin","/auth/twitter" %></li>
+            <li><%= link_to "facebookでlogin", "/auth/facebook" %></li>
+            <li><%= link_to "googleでlogin", "/auth/google_oauth2" %></li>
+          </ul>
+        </li>
+    <% end %>
    </ul>
-  </div>
- <div style=" clear: both;"/>
-
+<div style=" clear: both;"/>
+<!--
+<h3>session</h3>
+<h4><%= debug(session) %></h4>
+<h3>current_user</h3>
+<h4><%= debug(current_user) %></h4>
+-->
 </div>
 

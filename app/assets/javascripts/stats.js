@@ -1,7 +1,9 @@
 document.addEventListener ('DOMContentLoaded', function(){
 	var rate_elems = $('td.rate');
 	for(var i = 0; i < rate_elems.length; i++){
-		if        ( rate_elems[i].textContent > 90 ) {
+		if        ( rate_elems[i].textContent == 100 ) {
+			rate_elems[i].bgColor = "blue" ;
+		} else if ( rate_elems[i].textContent > 90 ) {
 			rate_elems[i].bgColor = "#FFFFFF" ;
 		} else if ( rate_elems[i].textContent > 80 ) {
 			rate_elems[i].bgColor = "#EEEEEE" ;
@@ -22,7 +24,7 @@ document.addEventListener ('DOMContentLoaded', function(){
 		} else if ( rate_elems[i].textContent > 0 ) {
 			rate_elems[i].bgColor = "#666666" ;
 		} else {
-			rate_elems[i].bgColor = "#555555" ;
+			rate_elems[i].bgColor = "red" ;
 		}
 	}
 },false);

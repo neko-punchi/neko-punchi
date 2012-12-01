@@ -3,15 +3,17 @@
 -->
 <table>
   <tr>
-    <th>問題番号</th>
+    <th>カテゴリ</th>
+    <th>サブカテゴリ</th>
     <th>正答率</th>
   </tr>
 
 
-<% @your_answer_rates.each do |line| %>
+<% @objlist.each do |line| %>
   <tr>
     <td><%= line[0] %></td>
-    <td class="rate"><%= line[1] %></td>
+    <td><%= line[1] %></td>
+    <td class="rate"><%= line[2] %></td>
   </tr>
 <% end %>
 </table>

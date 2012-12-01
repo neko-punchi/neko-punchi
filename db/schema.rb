@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121117014236) do
+ActiveRecord::Schema.define(:version => 20121130144842) do
 
   create_table "categories", :force => true do |t|
     t.string   "category",   :limit => 80, :null => false
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(:version => 20121117014236) do
   create_table "dictionaries", :force => true do |t|
     t.string   "word",       :limit => 100, :null => false
     t.text     "text",                      :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "personal_results", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.integer  "category_id"
+    t.integer  "sub_category_id"
+    t.integer  "correct"
+    t.integer  "wrong"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
