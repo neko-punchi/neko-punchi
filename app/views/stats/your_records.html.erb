@@ -5,15 +5,19 @@
   <tr>
     <th>カテゴリ</th>
     <th>サブカテゴリ</th>
+    <th>回答回数</th>
+    <th>正答回数</th>
     <th>正答率</th>
   </tr>
 
 
-<% @objlist.each do |line| %>
+<% @your_answer_rates.each do |line| %>
   <tr>
-    <td><%= line[0] %></td>
-    <td><%= line[1] %></td>
-    <td class="rate"><%= line[2] %></td>
+    <td><%= line[:category] %></td>
+    <td><%= line[:sub_category] %></td>
+    <td><%= line[:try_total] %></td>
+    <td><%= line[:correct_sub] %></td>
+    <td class="rate"><%= line[:rate] %></td>
   </tr>
 <% end %>
 </table>
