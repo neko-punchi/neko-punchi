@@ -13,27 +13,32 @@ class QuizzesListController < ApplicationController
    # redirect_to  :action  =>  "edit"
   end
   
-  def update
+  def update_table
     quiz_id = params[:quiz_id]
     #quizzesテーブルのデータをparamの値に更新
     quiz = Quiz.find_by_id(quiz_id)
-    quiz.text = params[:text].strip
-    quiz.sub_text = params[:sub_text].strip
-    quiz.choose = params[:choose].strip
-    quiz.answer = params[:answer].strip
-    quiz.hint = params[:hint].strip
-    quiz.save
+    Quiz.transaction do
+      quiz.text = params[:text].strip
+      quiz.sub_text = params[:sub_text].strip
+      quiz.choose = params[:choose].strip
+      quiz.answer = params[:answer].strip
+      quiz.hint = params[:hint].strip
+      quiz.save
    
-    #relationテーブルの変更
-    relation = Relation.find_by_quiz_id(quiz_id)
-    #findの結果、レコードが存在すれば更新し、0件(nil)の場合は新規に追加する。
-    if relation then
-      relation.category_id = params[:category]
-      relation.sub_category_id = params[:sub_category]
-    else
-      relation = Relation.new(:quiz_id => quiz_id, :category_id => params[:category], :sub_category_id => params[:sub_category])
+      #relationテーブルの変更
+      relation = Relation.find_by_quiz_id(quiz_id)
+    # findの結果、レコードが存在すれば更新し、0件(nil)の場合は新規に追加する。
+      if relation then
+        relation.category_id = params[:category].to_i
+        relation.sub_category_id = params[:sub_category]
+      else
+        relation = Relation.new(:quiz_id => quiz_id, :category_id => params[:category], :sub_category_id => params[:sub_category])
+      end
+      relation.save
     end
-    relation.save
-    redirect_to :controller => "quizzes_list", :action => "edit", :quiz_id => quiz_id
+      #成功時の処理
+      redirect_to :controller => "quizzes_list", :action => "edit", :quiz_id => quiz_id 
+    #resque => e
+      #TODO 失敗時の処理
   end
 end
