@@ -41,10 +41,15 @@ div.panel {
   border-color: #ccffff;
   margin: 5px;
   width: 120px;
-  height: 160px;
+  height: 150px;
   padding: 5px;
   border-radius: 5px;
   background: -moz-linear-gradient(top, #ccffff, #ffffff);　/* Firefox用 */  
   background: -webkit-gradient(linear, top, bottom, from(#ccffff), to(#ffffff));　/* Safari,Google Chrome用 */  
+}
+
+div#droppy-menu {
+  background-color: #cccccc;
+  height: 24px;
 }
 
