@@ -2,8 +2,8 @@ class StatsController < ApplicationController
   require "pp"
   def your_records
   	
-    @category = Category.all()
-    @sub_category = SubCategory.all()
+    @category = Category.find(:all,:order => "id ASC")
+    @sub_category = SubCategory.find(:all,:order=>"id ASC")
     pp @category
     pp @sub_category
 
