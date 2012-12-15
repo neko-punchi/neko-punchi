@@ -22,7 +22,7 @@ class StatsController < ApplicationController
       ans_rate_buff[:category] = get_category_name(categories,sc.category_id)
       ans_rate_buff[:sub_category] = get_sub_category_name(sub_categories,sc.id)
 
-      buff = PersonalResult.find_by_sub_category_id(sc.id)
+      buff = PersonalResult.find_by_provider_and_uid_and_sub_category_id(current_user.provider,current_user.uid,sc.id)
       
       if  buff == nil then
         ans_rate_buff[:correct_sub] = 0
