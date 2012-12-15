@@ -12,14 +12,15 @@
 }
 
 @mixin base-border {
-  border-color: #cc00cc;
+  //border-color: #cc00cc;
+  border-color: #666;
   border-width: 4px;
   border-style: dotted;
 }
 
 @mixin base-table-design {
 	background-color: #ffffff;
-	border-top:#ffffff 3px double;
+	border:#666 1px solid;
 	border-collapse: collapse;
 	font-size: 11px;
 	width: 100%;
@@ -27,19 +28,22 @@
 } 
 
 @mixin table_top {
-	border-bottom: #dcdddd 1px solid;
+	//border-bottom: #dcdddd 1px inset;
+border:#666 1px groove;
 	background-color: #ff99ff;
 	text-align: left;
 	padding: 10px;
 } 
 @mixin table_lineA {
 	background-color: #fff;
+border:#666 1px groove;
 	text-align: left;
 	padding: 10px;
 	vertical-align: top;
 }
 @mixin table_lineB {
 	background-color: #ffccff;
+border:#666 1px groove;
 	text-align: left;
 	padding: 10px;
 	vertical-align: top;
