@@ -26,7 +26,8 @@ ElearnNekoPunchi::Application.routes.draw do
   match 'quizzes_list' , :to => 'quizzes_list#index'
   match 'quizzes_list/edit' , :to => 'quizzes_list#edit'
   match 'quizzes_list/update_table' , :to => 'quizzes_list#update_table'
-
+  match 'quizzes_list/select_category' , :to => 'quizzes_list#select_category'
+  
   match 'stats/statistics' , :to => 'stats#statistics'
   match 'stats/your_records' , :to => 'stats#your_records'
   

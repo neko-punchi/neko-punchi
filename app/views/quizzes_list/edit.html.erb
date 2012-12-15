@@ -1,33 +1,30 @@
 <h1>問題編集</h1>
-
-    <%= form_for @quiz, :url => {:action => 'update_table'} do |f| %>
-      <%= f.hidden_field :id %>
+<% @quiz_data.each do |quiz| %>
+    <%= form_tag("/quizzes_list/update_table") do %>
+      <%= hidden_field_tag 'quiz_id', quiz.id %>
         <div class="quiz_edit_table">
         <div class="quiz_edit_t1">ID</div>
-        <div class="quiz_edit_c1"><%= @quiz.id %></div><br>
-        <% f.fields_for @quiz.relation || Relation.new do |f2| %>
-          <div class="quiz_edit_t1">category</div>
-          <div class="quiz_edit_c1">
-          <!--<%= select_tag :category, options_from_collection_for_select(Category.all, "id", "category") %>-->
-          <%= f2.collection_select(:category_id, Category.find(:all),:id,:category) %>
-          </div><br>
-          <div class="quiz_edit_t1">sub_category</div>
-          <div class="quiz_edit_c1">
-          <!--<<%= select_tag :sub_category, options_from_collection_for_select(SubCategory.all, "id", "sub_category") %>-->
-          <%= f2.collection_select(:sub_category_id, SubCategory.find(:all),:id, :sub_category) %>
-          </div><br>
-        <% end %>
+        <div class="quiz_edit_c1"><%= quiz.id %></div><br>
+        <div class="quiz_edit_t1">category</div>
+        <div class="quiz_edit_c1">
+          <%= select_tag :category, options_from_collection_for_select(Category.all, "id", "category") %>
+        </div><br>
+        <div class="quiz_edit_t1">sub_category</div>
+        <div class="quiz_edit_c1">
+          <%= render :partial => 'select_category' %>
+        </div><br>
         <div class="quiz_edit_t2">text</div>
-        <div class="quiz_edit_c2"><%= f.text_area :text, :size => "50x3" %></div><br>
+        <div class="quiz_edit_c2"><%= text_area_tag :text, quiz.text, :size => "50x3" %></div><br>
         <div class="quiz_edit_t2">sub_text</div>
-        <div class="quiz_edit_c2"><%= f.text_area :sub_text, :size => "50x3" %></div><br>
+        <div class="quiz_edit_c2"><%= text_area_tag :sub_text, quiz.sub_text, :size => "50x3" %></div><br>
         <div class="quiz_edit_t2">choose</div>
-        <div class="quiz_edit_c2"><%= f.text_area :choose, :size => "50x3"%></div><br>
+        <div class="quiz_edit_c2"><%= text_area_tag :choose, quiz.choose, :size => "50x3"%></div><br>
         <div class="quiz_edit_t2">answer</div>
-        <div class="quiz_edit_c2"><%= f.text_field :answer, :size => "50x3"%></div><br>
+        <div class="quiz_edit_c2"><%= text_field_tag :answer, quiz.answer, :size => "50x3"%></div><br>
         <div class="quiz_edit_t2">hint</div>
-        <div class="quiz_edit_c2"><%= f.text_area :hint, :size => "50x3"%></div><br>
-        <div class="quiz_edit_submit"><%= f.submit "変更" %></div><br>
+        <div class="quiz_edit_c2"><%= text_area_tag :hint, quiz.hint, :size => "50x3"%></div><br>
+        <div class="quiz_edit_submit"><%= submit_tag "変更", :class => "quiz_edit_submit"  %></div><br>
+      <% end %>
     <% end %>
   </div>
   <div style=" clear: both;"/>
