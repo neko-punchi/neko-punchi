@@ -1,0 +1,2 @@
+<%= select_tag "sub_category_test", options_from_collection_for_select(SubCategory.all, "id", "sub_category") %>
+
