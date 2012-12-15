@@ -12,7 +12,7 @@
 
 
 <% @your_answer_rates.each do |line| %>
-  <tr class="<%= cycle('tbl_lineA', 'tbl_lineB') -%>;">
+  <tr class="<%= cycle('tbl_lineA', 'tbl_lineB') -%>">
     <td><%= line[:category] %></td>
     <td><%= line[:sub_category] %></td>
     <td><%= line[:try_total] %></td>
