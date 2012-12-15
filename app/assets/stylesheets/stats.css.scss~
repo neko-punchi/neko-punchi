@@ -8,8 +8,7 @@
 
 @mixin base-table-design {
 	background-color: #ffffff;
-	border:#666 3px double;
-	border-top:#666 3px double;
+	border-top:#ffffff 3px double;
 	border-collapse: collapse;
 	font-size: 11px;
 	width: 100%;

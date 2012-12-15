@@ -1,15 +1,26 @@
-// Place all the styles related to the Stats controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// .ui-menu { width: 200px; }
 
-//table,td,th  {
-// border: solid 1px #ccc;  
-//}
+@mixin column {
+  float: left;
+  margin: 5px;
+  padding: 5px;
+}
+
+@mixin base-font {
+  //font color
+  color: #666;
+}
+
+@mixin base-border {
+  //border-color: #cc00cc;
+  border-color: #666;
+  border-width: 4px;
+  border-style: dotted;
+}
 
 @mixin base-table-design {
 	background-color: #ffffff;
-	border:#666 3px double;
-	border-top:#666 3px double;
+	border-top:#ffffff 3px double;
 	border-collapse: collapse;
 	font-size: 11px;
 	width: 100%;
@@ -34,6 +45,25 @@
 	padding: 10px;
 	vertical-align: top;
 }
+//droppy menu
+#droppy-menu {
+  background-color: #cccccc;
+  height: 24px;
+}
+
+.contents-part {
+  @include column;
+  @include base-font;
+  @include base-border;
+}
+
+.contents-part > h2 {
+  color: #33ccff;
+}
+.contents-part > h3 {
+  color: #ff66cc;
+}
+
 
 
 .table_base {
@@ -49,3 +79,5 @@
 .tbl_lineB {
   @include table_lineB;
 }
+
+

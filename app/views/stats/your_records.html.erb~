@@ -3,11 +3,11 @@
 -->
 <table class="table_base">
   <tr>
-    <th class="tbl_top">カテゴリ</th>
-    <th class="tbl_top">サブカテゴリ</th>
-    <th class="tbl_top">回答回数</th>
-    <th class="tbl_top">正答回数</th>
-    <th class="tbl_top">正答率</th>
+    <th>カテゴリ</th>
+    <th>サブカテゴリ</th>
+    <th>回答回数</th>
+    <th>正答回数</th>
+    <th>正答率</th>
   </tr>
 
 
