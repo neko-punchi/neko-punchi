@@ -3,16 +3,16 @@
 -->
 <table class="table_base">
   <tr>
-    <th>カテゴリ</th>
-    <th>サブカテゴリ</th>
-    <th>回答回数</th>
-    <th>正答回数</th>
-    <th>正答率</th>
+    <th class="tbl_top">カテゴリ</th>
+    <th class="tbl_top">サブカテゴリ</th>
+    <th class="tbl_top">回答回数</th>
+    <th class="tbl_top">正答回数</th>
+    <th class="tbl_top">正答率</th>
   </tr>
 
 
 <% @your_answer_rates.each do |line| %>
-  <tr>
+  <tr style="border-color:#666 background-color:<%= cycle("#fff", "#ccf") -%>;">
     <td><%= line[:category] %></td>
     <td><%= line[:sub_category] %></td>
     <td><%= line[:try_total] %></td>

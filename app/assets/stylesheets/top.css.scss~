@@ -29,21 +29,21 @@
 
 @mixin table_top {
 	//border-bottom: #dcdddd 1px inset;
-border:#666 1px groove;
+        border:#666 1px solid;
 	background-color: #ff99ff;
 	text-align: left;
 	padding: 10px;
 } 
 @mixin table_lineA {
 	background-color: #fff;
-border:#666 1px groove;
+        border:#666 1px solid;
 	text-align: left;
 	padding: 10px;
 	vertical-align: top;
 }
 @mixin table_lineB {
 	background-color: #ffccff;
-border:#666 1px groove;
+        border:#666 1px solid;
 	text-align: left;
 	padding: 10px;
 	vertical-align: top;
