@@ -1,0 +1,26 @@
+<h1>問題一覧</h1>
+<div class="quizzes_list_table">
+  <div class="quizzes_list_t1">ID</div>
+  <div class="quizzes_list_t2">text</div>
+  <div class="quizzes_list_t_subtext">sub_text</div>
+  <div class="quizzes_list_t2">choose</div>
+  <div class="quizzes_list_t1">answer</div>
+  <div class="quizzes_list_t1">hint</div>
+  <div class="quizzes_list_t3">変更ボタン</div>
+  <br>
+  <% @objlist.each do |quiz| %>
+    <%= form_tag("/quizzes_list/edit") do %>
+      <%= hidden_field_tag 'quiz_id', quiz.id %>
+      <div class="quizzes_list_c1"><%= quiz.id ? quiz.id : "なし" %></div>
+      <div class="quizzes_list_c2"><%= quiz.text ? quiz.text : "なし" %></div>
+      <div class="quizzes_list_subtext"><%= quiz.sub_text ? quiz.sub_text : "なし" %></div>
+      <div class="quizzes_list_c2"><%= quiz.choose ? quiz.choose : "なし" %></div>
+      <div class="quizzes_list_c1"><%= quiz.answer ? quiz.answer : "なし" %></div>
+      <div class="quizzes_list_c1"><%= quiz.answer ? quiz.hint : "なし" %></div>
+      <div class="quizzes_list_c3"><%= submit_tag "変更"  %></div>
+      <br>
+    <% end %>
+  <% end %>
+</div>
+<div style=" clear: both;"/>
+

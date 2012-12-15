@@ -1,0 +1,1 @@
+$("#sub_category").html("<%= escape_javascript(options_for_select(@subcategory.map{ |s| [s.sub_category, s.id] })) %>");
