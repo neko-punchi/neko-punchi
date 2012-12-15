@@ -4,7 +4,6 @@
   <h1>試験</h1>
 
   <!-- 問題一覧 -->
-  <%=link_to_function 'Press to Listen' do |page|   Sound.play "b_se1.wav" end %>
   <% number = 0 %>
   <% @objlist.each do |quiz| %>
     <% number += 1 %>
@@ -43,7 +42,7 @@
                 <label class='submit_button'>回答する</label>
             <% end %>
             <p name="message"></p>
-            <p name="correct_answer"></p>
+            <p name="correct_answer" style="display:none"></p>
         <% end %>
       </div><!--End of div class(dialog-model) -->
     </div><!-- End of div class(exam_box) -->
