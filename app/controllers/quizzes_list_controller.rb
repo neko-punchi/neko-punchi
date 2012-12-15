@@ -1,4 +1,5 @@
 class QuizzesListController < ApplicationController
+require 'pp'
   def index
     @objlist = Quiz.all
     #@category_list = Category.all
@@ -41,5 +42,12 @@ class QuizzesListController < ApplicationController
       redirect_to :controller => "quizzes_list", :action => "edit", :quiz_id => quiz_id 
     #resque => e
       #TODO 失敗時の処理
+  end
+  def select_category
+    @subcategory = SubCategory.find_all_by_category_id(params[:category_id])
+    pp @subcategory
+    puts @subcategory.length
+    #@subcategory = "test"
+    render
   end
 end
