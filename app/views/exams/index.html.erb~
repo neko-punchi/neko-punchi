@@ -1,3 +1,7 @@
+<audio id="pi" src="/sound/pi.wav" preload="auto"></audio>
+<audio id="poka" src="/sound/poka.wav" preload="auto" ></audio>
+<audio id="pu" src="/sound/pu.wav" preload="auto" ></audio>
+<audio id="puroro" src="/sound/puroro.wav" preload="auto" ></audio>
 
 <div id='exam-contents'>
 
@@ -42,7 +46,7 @@
                 <label class='submit_button'>回答する</label>
             <% end %>
             <p name="message"></p>
-            <p name="correct_answer" style="display:none"></p>
+            <p name="correct_answer"></p>
         <% end %>
       </div><!--End of div class(dialog-model) -->
     </div><!-- End of div class(exam_box) -->

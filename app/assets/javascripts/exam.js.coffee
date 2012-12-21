@@ -11,12 +11,16 @@ $(($)->
     width: 600,
     buttons: {
         "閉じる": (event) ->
+            sound = $("#ka")
+            sound[0].play()
             $(this).dialog("close");
     }
   })
   $('.exam_button').click(->
     quiz_num = $(this).attr("value")
     $('#' + quiz_num).dialog('open')
+    sound = $("#pi")
+    sound[0].play()
   )
 
   $('.exam_button').button({ text: true, icons: { primary :'ui-icon-carat-1-e'}})
@@ -37,6 +41,9 @@ $(($)->
      request += answer
      #alert(request)
 
+     pu = $("#pu")
+     pu[0].play()
+
      form.find("label").button('disable')
      $(quiz_number).button('disable')
 
@@ -54,6 +61,8 @@ $(($)->
                     opacity: 1.0,
                     color: "red" 
                 }, 200 );
+                puroro = $("#puroro")
+                puroro[0].play()
             else
                 line = form.children("p[name=message]")
                 line.text(data.msg)
@@ -64,6 +73,8 @@ $(($)->
                     opacity: 0.8,
                     fontSize: "2em"
                 }, 200 ,"easeInQuart");
+                poka = $("#poka")
+                poka[0].play()
 
         error: (xhr, status, err)->
             alert("error")
@@ -84,6 +95,9 @@ $(($)->
      request += "&answer="
      request += answer
      #alert(request)
+
+     pu = $("#pu")
+     pu[0].play()
 
      form.find("label").button('disable')
      $(quiz_number).button('disable')
@@ -106,6 +120,8 @@ $(($)->
                     opacity: 1.0,
                     color: "red" 
                 }, 200 );
+                puroro = $("#puroro")
+                puroro[0].play()
             else
                 line = form.children("p[name=message]")
                 line.text(data.msg)
@@ -116,6 +132,8 @@ $(($)->
                     opacity: 0.8,
                     fontSize: "2em"
                 }, 200 ,"easeInQuart");
+                poka = $("#poka")
+                poka[0].play()
             #alert(line.text())
 
         error: (xhr, status, err)->
