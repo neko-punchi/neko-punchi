@@ -2,6 +2,10 @@
 class TopController < ApplicationController
   def index
      @news_html = readWiki()
+     stat_maker = Stat::StatMaker.new
+
+     @ranking = stat_maker.get_ranking
+     pp @ranking
   end
 
 #read local news text with wiki format
@@ -15,5 +19,4 @@ class TopController < ApplicationController
 
     return Redcarpet::Markdown.new(html,:autolink => true).render(wiki)
   end
-
 end

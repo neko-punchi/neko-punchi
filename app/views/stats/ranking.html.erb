@@ -3,20 +3,19 @@
 -->
 <table class="table_base">
   <tr class="tbl_top">
-    <th>カテゴリ</th>
-    <th>サブカテゴリ</th>
-    <th>回答回数</th>
+    <th>順位</th>
+    <th>名前</th>
     <th>正答回数</th>
+    <th>誤答回数</th>
     <th>正答率</th>
   </tr>
 
-
-<% @your_answer_rates.each do |line| %>
+<% @ranking.each do |line| %>
   <tr class="<%= cycle('tbl_lineA', 'tbl_lineB') -%>">
-    <td><%= line[:category] %></td>
-    <td><%= line[:sub_category] %></td>
-    <td><%= line[:try_total] %></td>
+    <td><%= line[:ranking] %></td>
+    <td><%= line[:name] %></td>
     <td><%= line[:correct_sum] %></td>
+    <td><%= line[:wrong_sum] %></td>
     <td class="rate"><%= line[:rate] %></td>
   </tr>
 <% end %>

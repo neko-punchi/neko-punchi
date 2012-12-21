@@ -11,22 +11,18 @@
 <div class='contents-part'>
   <h2>上位ランカー！ (○ ･`ω・)ﾉ</h2>
   <table class="table_base">
+
     <tr>
       <th class="tbl_top">No</th>
       <th class="tbl_top">ユーザ</th>
     </tr>
-    <tr>
-      <td class="tbl_lineA">1</td>
-      <td class="tbl_lineA">さすらいの主婦</td>
+    <% @ranking.each do |line| %>
+    <tr class="<%= cycle('tbl_lineA', 'tbl_lineB') -%>">
+      <% if line[:ranking] == 4 then break end %>
+      <td><%= line[:ranking] %></td>
+      <td><%= line[:name] %></td>
     </tr>
-    <tr>
-      <td class="tbl_lineB">2</td>
-      <td class="tbl_lineB">地獄！平和団</td>
-    </tr>
-    <tr>
-      <td class="tbl_lineA">3</td>
-      <td class="tbl_lineA">猛追！わすれられたチャンピオン</td>
-    </tr>
+    <% end %>
   </table>
 </div>
 
@@ -36,11 +32,16 @@
 <div>
   <!-- メニューバー(exam-menu) -->
   <ul id='droppy-menu'>
-    <% if current_user %>
-      <li><%= link_to "あなたの成績" ,stats_your_records_path %>
-    <% else %>
-      <li><a href="#">あなたの成績</a>
-    <% end %>
+    <li><a href="#">成績情報</a>
+      <ul>
+      <% if current_user %>
+        <li><%= link_to "あなたの成績" ,stats_your_records_path %>
+      <% else %>
+        <li><a href="#">あなたの成績</a>
+      <% end %>
+      </li>
+      <li><%= link_to "ランキング",stats_ranking_path %></li>
+      </ul>
     </li>
     <li><a href="#">管理画面</a>
       <ul>
