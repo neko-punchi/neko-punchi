@@ -1,0 +1,13 @@
+class CreateQuizController < ApplicationController
+  def insert_quiz
+  
+  end
+  
+  def select_category
+    @subcategory = SubCategory.find_all_by_category_id(params[:category_id])
+    pp @subcategory
+    puts @subcategory.length
+    #@subcategory = "test"
+    render
+  end
+end

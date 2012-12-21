@@ -11,7 +11,7 @@
         </div><br>
         <div class="quiz_edit_t1">sub_category</div>
         <div class="quiz_edit_c1">
-          <%= render 'select_category',{:quiz => quiz} %>
+          <%= render {:quiz => quiz} %>
         </div><br>
         <div class="quiz_edit_t2">text</div>
         <div class="quiz_edit_c2"><%= text_area_tag :text, quiz.text, :size => "50x3" %></div><br>
