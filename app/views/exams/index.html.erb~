@@ -1,10 +1,13 @@
+<audio id="pi" src="/sound/pi.wav" preload="auto"></audio>
+<audio id="poka" src="/sound/poka.wav" preload="auto" ></audio>
+<audio id="pu" src="/sound/pu.wav" preload="auto" ></audio>
+<audio id="puroro" src="/sound/puroro.wav" preload="auto" ></audio>
 
 <div id='exam-contents'>
 
   <h1>試験</h1>
 
   <!-- 問題一覧 -->
-  <%=link_to_function 'Press to Listen' do |page|   Sound.play "b_se1.wav" end %>
   <% number = 0 %>
   <% @objlist.each do |quiz| %>
     <% number += 1 %>

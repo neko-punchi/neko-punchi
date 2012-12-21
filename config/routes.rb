@@ -33,6 +33,7 @@ ElearnNekoPunchi::Application.routes.draw do
   
   match 'stats/statistics' , :to => 'stats#statistics'
   match 'stats/your_records' , :to => 'stats#your_records'
+  match 'stats/ranking' , :to => 'stats#ranking'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
