@@ -452,7 +452,7 @@ Quiz.create(
 Relation.create(
   :id => '28',
   :quiz_id => '28',
-  :sub_category_id => '1',
+  :sub_category_id => '7',
   :category_id => '2')
 Quiz.create(
   :id => '28',

@@ -14,8 +14,11 @@ class ExamsController < ApplicationController
   # GET /exams
   # GET /exams.json
   def index
+    @id = params[:id]
+    query = 'select BB.sub_category, CC.* from relations AA inner join sub_categories BB on AA.sub_category_id = BB.id inner join quizzes CC on AA.quiz_id = CC.id where AA.category_id = ' + @id
 
-    items = Relation.find_by_sql(["select BB.sub_category, CC.* from relations AA inner join sub_categories BB on AA.sub_category_id = BB.id inner join quizzes CC on AA.quiz_id = CC.id where AA.category_id = 1"])
+    puts query
+    items = Relation.find_by_sql([query])
 
     @objlist = []
 
@@ -31,10 +34,10 @@ class ExamsController < ApplicationController
             rates[x.quiz_id] = 0
         else
             rates[x.quiz_id] = x.correct * 100 / count
-            printf("rate(%d) = x.correct(%d) * 100 / count(%d)\n", rates[x.quiz_id] ,x.correct, count)
+            #printf("rate(%d) = x.correct(%d) * 100 / count(%d)\n", rates[x.quiz_id] ,x.correct, count)
         end
     }
-    pp rates
+    #pp rates
         
     #printf("result:[%d] correct=%d wrong=%d\n", x.quiz_id, x.correct, x.wrong)} 
     
@@ -52,13 +55,10 @@ class ExamsController < ApplicationController
          else
             data["rate"] = rate
          end
-         printf("quiz_id=%d, rate=%d\n", quiz_id, data["rate"])
+         #printf("quiz_id=%d, rate=%d\n", quiz_id, data["rate"])
          @objlist << data
     }
     
-    @objlist.each {|x|
-        puts x["id"]
-    }
 
     #問題をランダムにシャッフル
     @objlist.shuffle!

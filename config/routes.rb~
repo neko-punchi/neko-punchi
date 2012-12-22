@@ -19,20 +19,22 @@ ElearnNekoPunchi::Application.routes.draw do
   match "/logout" => "sessions#destroy", :as => :logout
 
   match 'exams' , :to => 'exams#index'
-  match 'exams/show' , :to => 'exams#show'
+  match 'exams/:id' , :to => 'exams#index'
+  #match 'exams/show' , :to => 'exams#show'
   match 'exams/answer' , :to => 'exams#answer', :via => 'post'
-  match 'exams/next' , :to => 'exams#next', :via => 'get'
-  match 'exams/prev' , :to => 'exams#prev', :via => 'get'
+  #match 'exams/next' , :to => 'exams#next', :via => 'get'
+  #match 'exams/prev' , :to => 'exams#prev', :via => 'get'
   match 'quizzes_list' , :to => 'quizzes_list#index'
   match 'quizzes_list/edit' , :to => 'quizzes_list#edit'
   match 'quizzes_list/update_table' , :to => 'quizzes_list#update_table'
   match 'quizzes_list/select_category' , :to => 'quizzes_list#select_category'
   match 'create_quiz' ,:to => 'create_quiz#index'
-  match 'create_quiz/select_category' , :to => 'quizzes_list#select_category'
+  match '/select_category' , :to => 'quizzes_list#select_category'
   match 'create_quiz/insert_quiz' ,:to => 'create_quiz#insert_quiz'
   
   match 'stats/statistics' , :to => 'stats#statistics'
   match 'stats/your_records' , :to => 'stats#your_records'
+  match 'stats/ranking' , :to => 'stats#ranking'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

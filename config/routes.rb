@@ -19,10 +19,11 @@ ElearnNekoPunchi::Application.routes.draw do
   match "/logout" => "sessions#destroy", :as => :logout
 
   match 'exams' , :to => 'exams#index'
-  match 'exams/show' , :to => 'exams#show'
+  #match 'exams/show' , :to => 'exams#show'
   match 'exams/answer' , :to => 'exams#answer', :via => 'post'
-  match 'exams/next' , :to => 'exams#next', :via => 'get'
-  match 'exams/prev' , :to => 'exams#prev', :via => 'get'
+  match 'exams/:id' , :to => 'exams#index'
+  #match 'exams/next' , :to => 'exams#next', :via => 'get'
+  #match 'exams/prev' , :to => 'exams#prev', :via => 'get'
   match 'quizzes_list' , :to => 'quizzes_list#index'
   match 'quizzes_list/edit' , :to => 'quizzes_list#edit'
   match 'quizzes_list/update_table' , :to => 'quizzes_list#update_table'

@@ -11,6 +11,8 @@ $(($)->
     width: 600,
     buttons: {
         "閉じる": (event) ->
+            sound = $("#ka")
+            sound[0].play()
             $(this).dialog("close");
     }
   })
