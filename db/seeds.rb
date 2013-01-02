@@ -10,7 +10,9 @@ Category.create(:id => '2' ,:category => 'LPICレベル1 102試験')
 SubCategory.create(:id => '1' ,:category_id => '1', :sub_category => 'システムアーキテクチャ')
 SubCategory.create(:id => '2' ,:category_id => '1', :sub_category => 'Linuxのインストールとパッケージ管理')
 SubCategory.create(:id => '3' ,:category_id => '1', :sub_category => 'GNUとUnixのコマンド')
-SubCategory.create(:id => '4' ,:category_id => '1', :sub_category => 'デバイス、Linuxファイルシステム-階層標準')
+SubCategory.create(:id => '4' ,:category_id => '1', :sub_category => 'デバイス、Linuxファ                                                 [~/vmware-tools-distrib]
+
+イルシステム-階層標準')
 
 SubCategory.create(:id => '5' ,:category_id => '2', :sub_category => 'シェル、スクリプト、およびデータ管理')
 SubCategory.create(:id => '6' ,:category_id => '2', :sub_category => 'ユーザインターフェイスとデスクトップ')
@@ -483,5 +485,21 @@ Quiz.create(
 5.　プリンタを設定するとき',
   :choose => "1,2,3,4,5",
   :answer => '1')
+#----------------------------------------------------------------------
+Relation.create(
+  :id => '30',
+  :quiz_id => '30',
+  :sub_category_id => '1',
+  :category_id => '1')
+Quiz.create(
+  :id => '30',
+  :text => 'デバイスが利用しているDMAチャネルの情報を確認できるコマンドとして適切なものを選びなさい。',
+  :sub_text => 
+'1. cat /dev/dma
+2. cat /etc/dma
+3. lsdma
+4. cat /proc/dma',
+  :choose => "1,2,3,4",
+  :answer => '4')
 
 
