@@ -1,16 +1,16 @@
 require "pp"
 class Stat::StatMaker
   def initialize
-    p "StatMaker.initialize"
+  #  p "StatMaker.initialize"
     @all_personal_results = PersonalResult.find(:all)
     @all_users = User.find(:all)
-    pp @all_personal_results
-    pp @all_users
+  #  pp @all_personal_results
+  #  pp @all_users
   end
 
   def get_ranking
     
-    p "method [Stat::Ranking.ranking]" # test message
+    # p "method [Stat::Ranking.ranking]" # test message
     all_correct_sum_results = get_stat_of_correct_count    
     # ソート
     ranking = all_correct_sum_results.sort_by{ |val| [-val[:correct_sum],val[:wrong_sum]]}
@@ -29,7 +29,7 @@ class Stat::StatMaker
 
   def get_stat_of_correct_count
     stat_records = []
-    user_results_record = nil
+    # user_results_record = nil
 
     @all_users.each do |user|
  
@@ -49,7 +49,7 @@ class Stat::StatMaker
       user_results_record[:rate] = user_results_record[:correct_sum]*100/(user_results_record[:correct_sum]+user_results_record[:wrong_sum])
  
       stat_records << user_results_record
-      user_results_record = nil
+      # user_results_record = nil
  
     end
 
