@@ -483,5 +483,181 @@ Quiz.create(
 5.　プリンタを設定するとき',
   :choose => "1,2,3,4,5",
   :answer => '1')
-
+#----------------------------------------------------------------------
+Relation.create(
+  :id => '30',
+  :quiz_id => '30',
+  :sub_category_id => '1',
+  :category_id => '1')
+Quiz.create(
+  :id => '30',
+  :text => 'デバイスが利用しているDMAチャネルの情報を確認できるコマンドとして適切なものを選びなさい。',
+  :sub_text => 
+'1. cat /dev/dma
+2. cat /etc/dma
+3. lsdma
+4. cat /proc/dma',
+  :choose => "1,2,3,4",
+  :answer => '4')
+#----------------------------------------------------------------------
+Relation.create(
+  :id => '31',
+  :quiz_id => '31',
+  :sub_category_id => '1',
+  :category_id => '1')
+Quiz.create(
+  :id => '31',
+  :text => 'シリアルポートに割り当てられる一般的なIRQ番号として適切なものを2つ選びなさい。',
+  :sub_text => 
+'1. 1
+2. 3
+3. 4
+4. 7
+5. 12',
+  :choose => "1,2,3,4,5",
+  :answer => '2,3')
+#----------------------------------------------------------------------
+Relation.create(
+  :id => '32',
+  :quiz_id => '32',
+  :sub_category_id => '1',
+  :category_id => '1')
+Quiz.create(
+  :id => '32',
+  :text => 'デバイスのコンフリクトが発生したときに起こりうる問題を2つ選びなさい。',
+  :sub_text => 
+'1. USBデバイスだけが使用できなくなる
+2. スーパーユーザーにユーザー変更できなくなる
+3. モデムを用いた通信において、通信速度が著しく低下する。あるいは、通信ができなくなる
+4. パラレルポートに接続されているプリンタが使用できなくなる',
+  :choose => "1,2,3,4",
+  :answer => '3,4')
+#----------------------------------------------------------------------
+Relation.create(
+  :id => '33',
+  :quiz_id => '33',
+  :sub_category_id => '1',
+  :category_id => '1')
+Quiz.create(
+  :id => '33',
+  :text => 'SCSI-1規格において、接続可能なデバイスの数を記述しなさい。ただし、ホストアダプタの接続数は含まないものとする。',
+  :sub_text => 
+'',
+  :choose => "",
+  :answer => '7')
+#----------------------------------------------------------------------
+Relation.create(
+  :id => '34',
+  :quiz_id => '34',
+  :sub_category_id => '1',
+  :category_id => '1')
+Quiz.create(
+  :id => '34',
+  :text => 'SATAに関する説明として適切なものを選びなさい。 ',
+  :sub_text => 
+'1. パラレル転送方式のATAである
+2. Ultra ATA規格よりも転送速度は速い
+3. 終端にターミネータを接続する必要がある',
+  :choose => "1,2,3",
+  :answer => '2')
+#----------------------------------------------------------------------
+Relation.create(
+  :id => '35',
+  :quiz_id => '35',
+  :sub_category_id => '1',
+  :category_id => '1')
+Quiz.create(
+  :id => '35',
+  :text => '以下は、デバイスが利用しているIRQの情報が記述されているファイルの内容を表示したものである。このファイル名として適切なものを選びなさい。
+CPU0
+ 0:993017 XT-PIC timer
+ 1:   150 XT-PIC keyboard
+ 2:     0 XT-PIC cascade
+ 3: 13546 XT-PIC orinoco_cs
+ 5:     2 XT-PIC via82cxxx
+ 8:     1 XT-PIC rtc
+ 9:     0 XT-PIC usb-uhci, usb-uhci
+11:   118 XT-PIC eth0
+12:   905 XT-PIC PS/2 Mouse
+14:  9374 XT-PIC ide0
+15:   698 XT-PIC ide1
+NMI:    0
+ERR:    0',
+  :sub_text => 
+'1. /proc/cmdline
+2. /proc/interrupts
+3. /proc/ioports
+4. /proc/cpuinfo',
+  :choose => "1,2,3,4",
+  :answer => '2')
+#----------------------------------------------------------------------
+Relation.create(
+  :id => '36',
+  :quiz_id => '36',
+  :sub_category_id => '1',
+  :category_id => '1')
+Quiz.create(
+  :id => '36',
+  :text => '/proc/pciファイルに記述されている内容として適切なものを選びなさい。',
+  :sub_text => 
+'1. 起動中のシステム上で使用可能なPCIデバイスの製品型番一覧
+2. 起動中のシステム上で動作しているPCIデバイスの製品型番一覧
+3. PCIバスの割り当て番号一覧
+4. カーネルの初期化時に認識したすべてのPCIデバイスの一覧とその設定',
+  :choose => "1,2,3,4",
+  :answer => '4')
+#----------------------------------------------------------------------
+Relation.create(
+  :id => '37',
+  :quiz_id => '37',
+  :sub_category_id => '1',
+  :category_id => '1')
+Quiz.create(
+  :id => '37',
+  :text => '以下は、あるデバイス情報を表示するコマンドの実行結果である。このときに実行したと考えられるコマンドとして適切なものを選びなさい。
+00:00.0 Host bridge: Intel Corporation 440BX/ZX/DX - 82443BX/ZX/DX Host bridge (rev 01)
+00:01.0 PCI bridge: Intel Corporation 440BX/ZX/DX - 82443BX/ZX/DX AGP bridge (rev 01)
+00:07.0 ISA bridge: Intel Corporation 82371AB/EB/MB PIIX4 ISA (rev 08)
+00:07.1 IDE interface: Intel Corporation 82371AB/EB/MB PIIX4 IDE (rev 01)
+00:07.2 USB Controller: Intel Corporation 82371AB/EB/MB PIIX4 USB
+00:07.3 Bridge: Intel Corporation 82371AB/EB/MB PIIX4 ACPI (rev 08)
+00:0f.0 VGA compatible controller: VMware Inc Abstract SVGA II Adapter
+00:10.0 Ethernet controller: Advanced Micro Devices [AMD] 79c970 [PCnet32 LANCE] (rev 10)
+00:11.0 Multimedia audio controller: Ensoniq ES1371 [AudioPCI-97] (rev 02)',
+  :sub_text => 
+'1. lsusb
+2. modprobe
+3. lsmod
+4. lspci',
+  :choose => "1,2,3,4",
+  :answer => '4')
+#----------------------------------------------------------------------
+Relation.create(
+  :id => '38',
+  :quiz_id => '38',
+  :sub_category_id => '1',
+  :category_id => '1')
+Quiz.create(
+  :id => '38',
+  :text => 'USBに関する説明として誤っているものを2つ選びなさい。',
+  :sub_text => 
+'1. プラグアンドプレイやホットプラグには対応していない
+2. カーネル2.4で正式に実装された
+3. USB 1.1とUSB 2.0では、転送速度は変わらない
+4. 最大接続台数は127台である',
+  :choose => "1,2,3,4",
+  :answer => '1,3')
+#----------------------------------------------------------------------
+Relation.create(
+  :id => '39',
+  :quiz_id => '39',
+  :sub_category_id => '1',
+  :category_id => '1')
+Quiz.create(
+  :id => '39',
+  :text => USBに接続しているデバイスの情報を表示したい。適切なコマンドを記述しなさい。',
+  :sub_text => 
+'',
+  :choose => "",
+  :answer => 'lsusb')
 
