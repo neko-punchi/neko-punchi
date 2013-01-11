@@ -47,7 +47,11 @@ class Stat::StatMaker
           user_results_record[:wrong_sum] += ps[:wrong]
         end
       end
-      user_results_record[:rate] = user_results_record[:correct_sum]*100/(user_results_record[:correct_sum]+user_results_record[:wrong_sum])
+      if (user_results_record[:correct_sum]+user_results_record[:wrong_sum]) != 0 then
+        user_results_record[:rate] = user_results_record[:correct_sum]*100/(user_results_record[:correct_sum]+user_results_record[:wrong_sum])
+      else
+        user_results_record[:rate] = 0
+      end
  
       stat_records << user_results_record
       # user_results_record = nil
