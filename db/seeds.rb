@@ -655,7 +655,7 @@ Relation.create(
   :category_id => '1')
 Quiz.create(
   :id => '39',
-  :text => USBに接続しているデバイスの情報を表示したい。適切なコマンドを記述しなさい。',
+  :text => 'USBに接続しているデバイスの情報を表示したい。適切なコマンドを記述しなさい。',
   :sub_text => 
 '',
   :choose => "",
