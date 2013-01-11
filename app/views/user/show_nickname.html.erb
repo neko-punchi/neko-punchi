@@ -1,0 +1,16 @@
+<h1>ニックネーム変更</h1>
+<p></p>
+<form action="change_nickname" method="post">
+<input type="text" name="chg_nickname" value=<%= @user.nickname %> />
+<input type="hidden" name="provider" value=<%= @user.provider %> />
+<input type="hidden" name="id" value=<%= @user.id %> />
+
+<input type="submit" name="commit" value="変更" /></p>
+</form>
+
+<!--
+<h3>session</h3>
+<h4><%= debug(session) %></h4>
+<h3>current_user</h3>
+<h4><%= debug(current_user) %></h4>
+-->

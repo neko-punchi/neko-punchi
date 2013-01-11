@@ -37,6 +37,7 @@ class Stat::StatMaker
       {:provider => user[:provider],
        :uid => user[:uid],
        :name => user[:name],
+       :nickname => user[:nickname],
        :correct_sum => 0,
        :wrong_sum => 0 }
       

@@ -20,7 +20,7 @@
     <tr class="<%= cycle('tbl_lineA', 'tbl_lineB') -%>">
       <% if line[:ranking] == 4 then break end %>
       <td><%= line[:ranking] %></td>
-      <td><%= line[:name] %></td>
+      <td><%= line[:nickname] %></td>
     </tr>
     <% end %>
   </table>
@@ -55,6 +55,7 @@
         <li><a href="#"><%= current_user.name %>ログイン中</a> 
           <ul>
             <li><%= link_to "ログアウト" ,logout_path %></li>
+            <li><%= link_to "ニックネーム変更","/user/show_nickname" %></li>
           </ul>
         </li>
     <% else %>

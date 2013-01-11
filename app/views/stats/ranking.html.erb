@@ -13,7 +13,7 @@
 <% @ranking.each do |line| %>
   <tr class="<%= cycle('tbl_lineA', 'tbl_lineB') -%>">
     <td><%= line[:ranking] %></td>
-    <td><%= line[:name] %></td>
+    <td><%= line[:nickname] %></td>
     <td><%= line[:correct_sum] %></td>
     <td><%= line[:wrong_sum] %></td>
     <td class="rate"><%= line[:rate] %></td>

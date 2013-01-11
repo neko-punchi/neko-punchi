@@ -1,4 +1,8 @@
 ElearnNekoPunchi::Application.routes.draw do
+  get "user/show_nickname"
+
+  get "user/change_nickname"
+
   resources :relations
 
   resources :dictionaries
@@ -35,6 +39,8 @@ ElearnNekoPunchi::Application.routes.draw do
   match 'stats/statistics' , :to => 'stats#statistics'
   match 'stats/your_records' , :to => 'stats#your_records'
   match 'stats/ranking' , :to => 'stats#ranking'
+  match  'user/change_nickname' , :to => 'user#change_nickname'
+  match  'user/show_nickname' , :to => 'user#show_nickname'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
