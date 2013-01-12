@@ -661,3 +661,20 @@ Quiz.create(
   :choose => "",
   :answer => 'lsusb')
 
+#----------------------------------------------------------------------
+Relation.create(
+  :id => '40',
+  :quiz_id => '40',
+  :sub_category_id => '3',
+  :category_id => '1')
+Quiz.create(
+  :id => '40',
+  :text => 'ディレクトリの中身の一覧を日付順に並べて表示するコマンドを選びなさい。',
+  :sub_text => 
+'1. mkdir -p
+2. ls -t
+3. list directory
+4. ls -F',
+  :choose => "1,2,3,4",
+  :answer => '2')
+

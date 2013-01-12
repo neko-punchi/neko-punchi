@@ -647,4 +647,17 @@ Quiz.create(
 4. 最大接続台数は127台である',
   :choose => "1,2,3,4",
   :answer => '1,3')
+#----------------------------------------------------------------------
+Relation.create(
+  :id => '39',
+  :quiz_id => '39',
+  :sub_category_id => '1',
+  :category_id => '1')
+Quiz.create(
+  :id => '39',
+  :text => 'USBに接続しているデバイスの情報を表示したい。適切なコマンドを記述しなさい。',
+  :sub_text => 
+'',
+  :choose => "",
+  :answer => 'lsusb')
 
