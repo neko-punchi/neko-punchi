@@ -678,3 +678,41 @@ Quiz.create(
   :choose => "1,2,3,4",
   :answer => '2')
 
+#----------------------------------------------------------------------
+Relation.create(
+  :id => '41',
+  :quiz_id => '41',
+  :sub_category_id => '3',
+  :category_id => '1')
+Quiz.create(
+  :id => '41',
+  :text => '実行中プロセスの優先度を-10に変更するコマンドを選びなさい。',
+  :sub_text => 
+'1. renice -10 [PID]
+2. altpri -10 [PID]
+3. kill -10 [PID]
+4. nice -n 10 [PID]',
+  :choose => "1,2,3,4",
+  :answer => '1')
+
+#----------------------------------------------------------------------
+Relation.create(
+  :id => '42',
+  :quiz_id => '42',
+  :sub_category_id => '4',
+  :category_id => '1')
+Quiz.create(
+  :id => '42',
+  :text => '以下は/etc/fstabファイルの一部です。
+
+  /dev/sda7    /tmp     ext2     defaults    0   0
+
+  この中で、マウントポイントを選択してください。',
+  :sub_text => 
+'1. /dev/sda7
+2. /tmp
+3. ext2
+4. defaults',
+  :choose => "1,2,3,4",
+  :answer => '2')
+
