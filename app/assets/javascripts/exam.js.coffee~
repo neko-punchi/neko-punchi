@@ -48,7 +48,7 @@ $(($)->
      $(quiz_number).button('disable')
 
      $.ajax({
-        url: "exams/answer",
+        url: "/exams/answer",
         type: "POST",
         data: request
         success: (data)->
@@ -103,7 +103,7 @@ $(($)->
      $(quiz_number).button('disable')
 
      $.ajax({
-        url: "exams/answer",
+        url: "/exams/answer",
         type: "POST",
         data: request
         success: (data)->
