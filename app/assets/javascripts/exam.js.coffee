@@ -7,20 +7,26 @@ $(($)->
   $( ".dialog-modal" ).dialog({
     modal: true,
     autoOpen: false,
-    height: 500,
+    height: 520,
     width: 600,
     buttons: {
         "閉じる": (event) ->
-            sound = $("#ka")
-            sound[0].play()
+            if($.browser.msie && $.browser.version < 9)
+                #no action
+            else
+                sound = $("#ka")
+                sound[0].play()
             $(this).dialog("close");
     }
   })
   $('.exam_button').click(->
     quiz_num = $(this).attr("value")
     $('#' + quiz_num).dialog('open')
-    sound = $("#pi")
-    sound[0].play()
+    if($.browser.msie && $.browser.version < 9)
+        #no action
+    else
+        sound = $("#pi")
+        sound[0].play()
   )
 
   $('.exam_button').button({ text: true, icons: { primary :'ui-icon-carat-1-e'}})
@@ -41,17 +47,16 @@ $(($)->
      request += answer
      #alert(request)
 
-     alert("pre sound method")
+     if($.browser.msie && $.browser.version < 9)
+         #no action
+     else
+         pu = $("#pu")
+         pu[0].play()
 
-     #pu = $("#pu")
-     #pu[0].play()
-
-     alert("pre disable method")
 
      form.find("label").button('disable')
      $(quiz_number).button('disable')
 
-     alert("pre ajax method")
 
      $.ajax({
         url: "/exams/answer",
@@ -68,8 +73,11 @@ $(($)->
                     opacity: 1.0,
                     color: "red" 
                 }, 200 );
-                puroro = $("#puroro")
-                puroro[0].play()
+                if($.browser.msie && $.browser.version < 9)
+                    #no action
+                else
+                    puroro = $("#puroro")
+                    puroro[0].play()
             else
                 line = form.children("p[name=message]")
                 line.text(data.msg)
@@ -80,8 +88,12 @@ $(($)->
                     opacity: 0.8,
                     fontSize: "2em"
                 }, 200 ,"easeInQuart");
-                poka = $("#poka")
-                poka[0].play()
+                
+                if($.browser.msie && $.browser.version < 9)
+                    #no action
+                else
+                    poka = $("#poka")
+                    poka[0].play()
 
         error: (xhr, status, err)->
             alert("error")
@@ -103,17 +115,16 @@ $(($)->
      request += answer
      #alert(request)
 
-     alert("pre sound method")
-
-     #pu = $("#pu")
-     #pu[0].play()
-
-     alert("pre disable method")
+     if($.browser.msie && $.browser.version < 9)
+         #no action
+     else
+         pu = $("#pu")
+         pu[0].play()
+     
 
      form.find("label").button('disable')
      $(quiz_number).button('disable')
      
-     alert("pre ajax method")
      
      $.ajax({
         url: "/exams/answer",
@@ -134,8 +145,12 @@ $(($)->
                     opacity: 1.0,
                     color: "red" 
                 }, 200 );
-                puroro = $("#puroro")
-                puroro[0].play()
+                if($.browser.msie && $.browser.version < 9)
+                    #no action
+                else
+                    puroro = $("#puroro")
+                    puroro[0].play()
+                 
             else
                 line = form.children("p[name=message]")
                 line.text(data.msg)
@@ -146,8 +161,13 @@ $(($)->
                     opacity: 0.8,
                     fontSize: "2em"
                 }, 200 ,"easeInQuart");
-                poka = $("#poka")
-                poka[0].play()
+                
+                if($.browser.msie && $.browser.version < 9)
+                    #no action
+                else
+                    poka = $("#poka")
+                    poka[0].play()
+
             #alert(line.text())
 
         error: (xhr, status, err)->
