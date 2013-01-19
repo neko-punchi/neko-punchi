@@ -50,6 +50,7 @@ $(($)->
      $.ajax({
         url: "/exams/answer",
         type: "POST",
+        cache: false,
         data: request
         success: (data)->
             if data.isCorrect
@@ -105,6 +106,7 @@ $(($)->
      $.ajax({
         url: "/exams/answer",
         type: "POST",
+        cache: false,
         data: request
         success: (data)->
             #alert(data.msg)
