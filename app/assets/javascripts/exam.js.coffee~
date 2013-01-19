@@ -32,7 +32,7 @@ $(($)->
      form = $(this).parent()
      answer = form.children("input[name=answer]").val()
      quiz_id = form.children("input[name=quiz_id]")
-     #alert(quiz_id.val())
+     alert(quiz_id.val())
      quiz_number = form.children("input[name=quiz_number]").val()
      #alert(quiz_number)
      request = "quiz_id="
@@ -46,6 +46,8 @@ $(($)->
 
      form.find("label").button('disable')
      $(quiz_number).button('disable')
+
+     alert("pre ajax method")
 
      $.ajax({
         url: "/exams/answer",
@@ -88,7 +90,7 @@ $(($)->
      #following are quiz_id search block
      form = $(this).parent()
      quiz_id = form.children("input[name=quiz_id]")
-     #alert(quiz_id.val())
+     alert(quiz_id.val())
      quiz_number = form.children("input[name=quiz_number]").val()
      #alert(quiz_number)
      request = "quiz_id="
@@ -102,7 +104,9 @@ $(($)->
 
      form.find("label").button('disable')
      $(quiz_number).button('disable')
-
+     
+     alert("pre ajax method")
+     
      $.ajax({
         url: "/exams/answer",
         type: "POST",

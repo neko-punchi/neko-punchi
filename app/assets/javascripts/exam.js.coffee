@@ -41,6 +41,8 @@ $(($)->
      request += answer
      #alert(request)
 
+     alert("pre sound method")
+
      pu = $("#pu")
      pu[0].play()
 
@@ -98,6 +100,8 @@ $(($)->
      request += "&answer="
      request += answer
      #alert(request)
+
+     alert("pre sound method")
 
      pu = $("#pu")
      pu[0].play()
