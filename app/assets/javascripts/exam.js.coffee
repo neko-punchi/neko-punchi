@@ -46,6 +46,8 @@ $(($)->
      pu = $("#pu")
      pu[0].play()
 
+     alert("pre disable method")
+
      form.find("label").button('disable')
      $(quiz_number).button('disable')
 
@@ -105,6 +107,8 @@ $(($)->
 
      pu = $("#pu")
      pu[0].play()
+
+     alert("pre disable method")
 
      form.find("label").button('disable')
      $(quiz_number).button('disable')
