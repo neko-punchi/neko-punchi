@@ -66,7 +66,8 @@ class ExamsController < ApplicationController
 
 
   def answer
-    #_message = "とても残念だよ、君なら解けると思ったんだが・・・　不正解だ"
+    puts "サーバは回答を受け付けました"
+
     _message = GANBARE[rand(GANBARE.length)] 
     _status = false
 

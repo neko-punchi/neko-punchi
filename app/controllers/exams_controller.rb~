@@ -15,7 +15,7 @@ class ExamsController < ApplicationController
   # GET /exams.json
   def index
     @id = params[:id]
-    query = 'select BB.sub_category, CC.* from relations AA inner join sub_categories BB on AA.sub_category_id = BB.id inner join quizzes CC on AA.quiz_id = CC.id where AA.category_id = ' + "1"
+    query = 'select BB.sub_category, CC.* from relations AA inner join sub_categories BB on AA.sub_category_id = BB.id inner join quizzes CC on AA.quiz_id = CC.id where AA.category_id = ' + @id
 
     puts query
     items = Relation.find_by_sql([query])
