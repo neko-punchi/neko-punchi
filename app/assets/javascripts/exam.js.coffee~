@@ -41,17 +41,14 @@ $(($)->
      request += answer
      #alert(request)
 
-     alert("pre sound method")
 
      #pu = $("#pu")
      #pu[0].play()
 
-     alert("pre disable method")
 
      form.find("label").button('disable')
      $(quiz_number).button('disable')
 
-     alert("pre ajax method")
 
      $.ajax({
         url: "/exams/answer",
@@ -103,17 +100,14 @@ $(($)->
      request += answer
      #alert(request)
 
-     alert("pre sound method")
-
-     #pu = $("#pu")
-     #pu[0].play()
-
-     alert("pre disable method")
+     if($.browser.msie && $.browser.version > 8){
+         pu = $("#pu")
+         pu[0].play()
+     }
 
      form.find("label").button('disable')
      $(quiz_number).button('disable')
      
-     alert("pre ajax method")
      
      $.ajax({
         url: "/exams/answer",

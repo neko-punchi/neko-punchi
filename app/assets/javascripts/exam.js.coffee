@@ -100,9 +100,12 @@ $(($)->
      request += answer
      #alert(request)
 
-     pu = $("#pu")
-     alert(pu)
-     #pu[0].play()
+     if($.browser.msie && $.browser.version < 9)
+         #no action
+     else
+         pu = $("#pu")
+         pu[0].play()
+     
 
      form.find("label").button('disable')
      $(quiz_number).button('disable')
@@ -127,8 +130,12 @@ $(($)->
                     opacity: 1.0,
                     color: "red" 
                 }, 200 );
-                puroro = $("#puroro")
-                puroro[0].play()
+                if($.browser.msie && $.browser.version < 9)
+                    #no action
+                else
+                    puroro = $("#puroro")
+                    puroro[0].play()
+                 
             else
                 line = form.children("p[name=message]")
                 line.text(data.msg)
@@ -139,8 +146,13 @@ $(($)->
                     opacity: 0.8,
                     fontSize: "2em"
                 }, 200 ,"easeInQuart");
-                poka = $("#poka")
-                poka[0].play()
+                
+                if($.browser.msie && $.browser.version < 9)
+                    #no action
+                else
+                    poka = $("#poka")
+                    poka[0].play()
+
             #alert(line.text())
 
         error: (xhr, status, err)->
